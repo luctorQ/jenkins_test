@@ -12,8 +12,9 @@ pipeline {
             echo 'stage1'
             
           },
-          "": {
+          "error": {
             isUnix()
+            sleep 5
             
           }
         )

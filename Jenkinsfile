@@ -4,7 +4,7 @@ pipeline {
     stage('stage0') {
       steps {
         parallel(
-          "stage0": {
+          "stage66": {
             echo 'hello'
             
           },
@@ -25,5 +25,23 @@ pipeline {
         echo 'dddd'
       }
     }
+    stage('hgsag') {
+      steps {
+        parallel(
+          "hgsagdd": {
+            echo 'safasfd'
+            echo 'asfasfdddd'
+            
+          },
+          "gsdafas": {
+            echo 'asfasfdsa'
+            
+          }
+        )
+      }
+    }
+  }
+  environment {
+    dsaf = '33'
   }
 }

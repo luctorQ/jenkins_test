@@ -11,6 +11,10 @@ pipeline {
           "stage0_1": {
             echo 'stage1'
             
+          },
+          "": {
+            isUnix()
+            
           }
         )
       }

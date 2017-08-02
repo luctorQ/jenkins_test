@@ -16,6 +16,10 @@ pipeline {
             isUnix()
             sleep 5
             
+          },
+          "": {
+            build 'Pawel'
+            
           }
         )
       }

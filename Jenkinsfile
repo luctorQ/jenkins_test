@@ -13,11 +13,10 @@ pipeline {
             
           },
           "error": {
-            isUnix()
-            sleep 5
+            build 'Pawel'
             
           },
-          "": {
+          "hf": {
             build 'Pawel'
             
           }

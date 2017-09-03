@@ -13,7 +13,6 @@ pipeline {
             
           },
           "error": {
-            build 'Pawel'
             emailext(subject: 'test', body: 'takie sobie body', attachLog: true, from: 'luchtort@gmail.com', mimeType: 'text/html', replyTo: 'luchtort@gmail.com', to: 'pluszynski@bleak.pl')
             
           },

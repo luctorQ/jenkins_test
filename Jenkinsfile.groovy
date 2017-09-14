@@ -6,8 +6,8 @@ pipeline {
 		stage('build') {
 			steps {
 				script{
-					def build1= build job: 'java_project1'
-					//			  propagate: false
+					def build1= build job: 'java_project1',
+								propagate: false
 					println "build1:"+build1
 					
 					if (build.getAction(hudson.tasks.junit.TestResultAction.class) == null) {

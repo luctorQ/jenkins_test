@@ -7,11 +7,11 @@ pipeline {
       steps {
 		  script{
 			  def response1= build job: 'java_project1',
-			  propagate: false
+//			  propagate: false
 			  println "response1:"+response1
 			  
 			  def response2= build job: 'java_project2',
-			  propagate: false
+//			  propagate: false
 			  println "response2:"+response2
 		  }
 		  

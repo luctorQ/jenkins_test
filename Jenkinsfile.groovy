@@ -20,7 +20,10 @@ pipeline {
 					if (testsResult == null) {
 						println("No tests")
 					  }else {
-						  println('much test:'+testsResult)
+						  println('tests failed count:'+testsResult.getFailCount())
+						  println('tests skipped count:'+testsResult.getSkipCount())
+						  println('tests total count:'+testsResult.getTotalCount())
+						  testsResult=null;
 					  }
 					
 

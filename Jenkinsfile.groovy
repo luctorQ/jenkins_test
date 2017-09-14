@@ -21,8 +21,8 @@ pipeline {
       steps {
         echo 'reporting'
 		
-		emailext to: 'pawelluszynski@hastingsdirect.onmicrosoft.com',
-		replyTo: 'pawelluszynski@hastingsdirect.onmicrosoft.com',
+		emailext to: 'luchtort@gmail.com',
+		replyTo: 'pluszynski@bleak.pl',
 		subject: "test email local",
 		body: """
 			local test

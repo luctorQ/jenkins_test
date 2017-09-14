@@ -10,17 +10,17 @@ pipeline {
 								propagate: false
 					println "build1:"+build1
 					
-					println 'actions:'+build1.getRawBuild().getActions()
+					println 'actions:'+build1.rawBuild.getActions()
 					
 					
 					
-					def testsResult=build1.getRawBuild().getAction(hudson.tasks.test.AggregatedTestResultAction)
+					def testsResult=build1.rawBuild.getAction(hudson.tasks.test.AggregatedTestResultAction)
 //					def testsResult=build1.getRawBuild().getAction(hudson.tasks.junit.TestResultAction.class)
 					
 					if (testsResult == null) {
 						println("No tests")
 					  }else {
-						  println('tests failed count:'+testsResult.getFailCount())
+						  println('tests failed count:'+testsResult.failCount)
 						  println('tests skipped count:'+testsResult.getSkipCount())
 						  println('tests total count:'+testsResult.getTotalCount())
 						  testsResult=null;

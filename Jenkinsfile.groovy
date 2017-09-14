@@ -81,7 +81,8 @@ pipeline {
 			replyTo: 'pluszynski@bleak.pl',
 			subject: "test email local",
 			body: """
-				APPS covered by Continuous Integration Process: ${CI_COVERED_APPS.findAll({it.value}).collect({it.key.toUpperCase()})}
+				APPS covered by Continuous Integration Process: ${CI_COVERED_APPS.findAll({it.value}).collect({it.key.toUpperCase()})}\n
+				${false?:'nie powinno byc\n'}
 				local test
 			"""
 		}

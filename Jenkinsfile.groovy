@@ -18,6 +18,8 @@ pipeline {
 						propagate: false
 						
 						println "build1 result:"+build1.result
+						if(build1.result!="SUCCESS")
+							throw new hudson.AbortException(build1)
 					}catch(e) {
 						if(build1.result!="SUCCESS")
 						throw new hudson.AbortException(build1)

@@ -1,4 +1,5 @@
 import hudson.tasks.junit.TestResultAction;
+import groovy.text.SimpleTemplateEngine
 
 pipeline {
 	agent any

@@ -19,7 +19,14 @@ pipeline {
     }
     stage('reporting') {
       steps {
-        echo 'dddd'
+        echo 'reporting'
+		
+		emailext to: 'pawelluszynski@hastingsdirect.onmicrosoft.com',
+		replyTo: 'pawelluszynski@hastingsdirect.onmicrosoft.com',
+		subject: "test email local",
+		body: """
+			local test
+        """
       }
     }
   }

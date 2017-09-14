@@ -16,6 +16,8 @@ pipeline {
 					try {
 						build1= build job: 'java_project1',
 						propagate: false
+						
+						println "build1 result:"+build1.result
 					}catch(e) {
 						if(build1.result!="SUCCESS")
 						throw new hudson.AbortException(build1)

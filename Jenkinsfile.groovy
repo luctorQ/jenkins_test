@@ -1,5 +1,6 @@
 import hudson.tasks.junit.TestResultAction;
-import groovy.text.SimpleTemplateEngine
+import groovy.text.SimpleTemplateEngine;
+import groovy.transform.Field;
 
 @Field
 def CI_COVERED_APPS=[ab:false,bc:true,pc:true,cc:true]

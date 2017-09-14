@@ -13,17 +13,17 @@ pipeline {
 			steps {
 				script{
 					def build1=null;
-					try {
+//					try {
 						build1= build job: 'java_project1',
 						propagate: false
 						
 						println "build1 result:"+build1.result
 						if(build1.result!="SUCCESS")
-							throw new hudson.AbortException(build1)
-					}catch(e) {
+							throw new hudson.AbortException("build1 failed")
+					/*}catch(e) {
 						if(build1.result!="SUCCESS")
 						throw new hudson.AbortException(build1)
-					}
+					}*/
 					statusBuild.b1.status=build1.result;
 //					statusBuild.b1.msg=build1.rawBuild.writeWholeLogTo()
 					/*def logFile=build1.rawBuild.logFile;

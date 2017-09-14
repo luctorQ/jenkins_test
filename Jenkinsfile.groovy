@@ -1,46 +1,21 @@
+import java.util.stream.Streams.AbstractStreamBuilderImpl
+
 pipeline {
   agent any
   stages {
-    stage('stage0') {
+    stage('build') {
       steps {
-        parallel(
-          "stage66": {
-            echo 'hello'
-            
-          },
-          "stage0_1": {
-            echo 'stage1'
-            
-          },
-          "error": {
-            emailext(subject: 'test', body: 'takie sobie body', attachLog: true, from: 'luchtort@gmail.com', mimeType: 'text/html', replyTo: 'luchtort@gmail.com', to: 'pluszynski@bleak.pl')
-            
-          },
-          "hf": {
-            build 'Pawel'
-            
-          }
-        )
+		  script{
+			  def response= build job: 'java_project1',
+			  propagate: false
+			  println "response:"+response
+		  }
+		  
       }
     }
-    stage('stage3') {
+    stage('reporting') {
       steps {
         echo 'dddd'
-      }
-    }
-    stage('hgsag') {
-      steps {
-        parallel(
-          "hgsagdd": {
-            echo 'safasfd'
-            echo 'asfasfdddd'
-            
-          },
-          "gsdafas": {
-            echo 'asfasfdsa'
-            
-          }
-        )
       }
     }
   }

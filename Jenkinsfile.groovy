@@ -1,6 +1,10 @@
 import hudson.tasks.junit.TestResultAction;
 import groovy.text.SimpleTemplateEngine
 
+@Field
+def CI_COVERED_APPS=[ab:false,bc:true,pc:true,cc:true]
+
+
 def statusBuild=[
 	b1:[status:'undefined',msg:'Build status undefined'],
 	b2:[status:'undefined',msg:'Build status undefined']
@@ -76,8 +80,9 @@ pipeline {
 			replyTo: 'pluszynski@bleak.pl',
 			subject: "test email local",
 			body: """
-			local test
-        """
+				APPS covered by Continuous Integration Process: ${CI_COVERED_APPS.findAll({it.value}).collect({it.key.toUpperCase()})}
+				local test
+			"""
 		}
 	}
 }

@@ -23,7 +23,7 @@ pipeline {
 						  println('tests failed count:'+testsResult.getFailCount())
 						  println('tests skipped count:'+testsResult.getSkipCount())
 						  println('tests total count:'+testsResult.getTotalCount())
-						  testsResult=null;
+//						  testsResult=null;
 					  }
 					
 

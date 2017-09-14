@@ -1,4 +1,4 @@
-import java.util.stream.Streams.AbstractStreamBuilderImpl
+import hudson.tasks.junit.TestResultAction;
 
 pipeline {
 	agent any
@@ -6,9 +6,15 @@ pipeline {
 		stage('build') {
 			steps {
 				script{
-					def response1= build job: 'java_project1'
+					def build1= build job: 'java_project1'
 					//			  propagate: false
-					println "response1:"+response1
+					println "build1:"+build1
+					
+					if (build.getAction(hudson.tasks.junit.TestResultAction.class) == null) {
+						println("No tests")
+						return ("No Tests")
+					  }
+					
 
 					def response2= build job: 'java_project2'
 					//			  propagate: false

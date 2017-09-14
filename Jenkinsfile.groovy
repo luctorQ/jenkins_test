@@ -12,14 +12,18 @@ pipeline {
 		stage('build') {
 			steps {
 				script{
-					def build1= build job: 'java_project1',
-					propagate: false
-					
+					def build1=null;
+					try {
+						build1= build job: 'java_project1',
+						propagate: false
+					}catch(e) {
+						throw(e)
+					}
 					statusBuild.b1.status=build1.result;
 //					statusBuild.b1.msg=build1.rawBuild.writeWholeLogTo()
-					def logFile=build1.rawBuild.logFile;
+					/*def logFile=build1.rawBuild.logFile;
 					def dest=new File(pwd(),'b1_dest.log')
-					dest.write(logFile.text)
+					dest.write(logFile.text)*/
 					
 					println "build1:"+build1
 					println 'actions:'+build1.rawBuild.actions

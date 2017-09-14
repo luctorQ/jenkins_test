@@ -10,7 +10,7 @@ pipeline {
 								propagate: false
 					println "build1:"+build1
 					
-					println 'actions:'+build1.rawBuild.getActions()
+					println 'actions:'+build1.rawBuild.actions
 					
 					
 					
@@ -21,8 +21,8 @@ pipeline {
 						println("No tests")
 					  }else {
 						  println('tests failed count:'+testsResult.failCount)
-						  println('tests skipped count:'+testsResult.getSkipCount())
-						  println('tests total count:'+testsResult.getTotalCount())
+						  println('tests skipped count:'+testsResult.skipCount)
+						  println('tests total count:'+testsResult.totalCount)
 						  testsResult=null;
 					  }
 					

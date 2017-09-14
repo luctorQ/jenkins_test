@@ -12,10 +12,19 @@ pipeline {
 					
 					println 'actions:'+build1.rawBuild.actions
 					
+					def templateFile = new File(".\\templates\\simple.template")
+					def engine = new SimpleTemplateEngine()
+					def template = engine.createTemplate(templateFile)
 					
+					def data=[name:'testowo']
+					
+					def writable = template.make(data)
+					println 'from template:'+writable
 					
 					def testsResult=build1.rawBuild.getAction(hudson.tasks.test.AggregatedTestResultAction)
 //					def testsResult=build1.getRawBuild().getAction(hudson.tasks.junit.TestResultAction.class)
+					
+					
 					
 					if (testsResult == null) {
 						println("No tests")

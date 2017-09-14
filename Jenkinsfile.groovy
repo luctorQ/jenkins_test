@@ -20,17 +20,20 @@ pipeline {
     stage('reporting') {
       steps {
         echo 'reporting'
-		
-		emailext to: 'luchtort@gmail.com',
-		replyTo: 'pluszynski@bleak.pl',
-		subject: "test email local",
-		body: """
-			local test
-        """
       }
     }
   }
   environment {
     dsaf = '33'
+  }
+  post{
+	  echo 'post actions'
+	  
+	  emailext to: 'luchtort@gmail.com',
+	  replyTo: 'pluszynski@bleak.pl',
+	  subject: "test email local",
+	  body: """
+			local test
+        """
   }
 }

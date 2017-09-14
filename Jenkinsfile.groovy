@@ -15,8 +15,8 @@ pipeline {
 					def build1= build job: 'java_project1',
 					propagate: false
 					
-					buildStatus.b1.status=build1.result;
-//					buildStatus.b1.msg=build1.rawBuild.writeWholeLogTo()
+					statusBuild.b1.status=build1.result;
+//					statusBuild.b1.msg=build1.rawBuild.writeWholeLogTo()
 					def logFile=build1.rawBuild.logFile;
 					def dest=new File(pwd(),'b1_dest.log')
 					dest.write(logFile.text)

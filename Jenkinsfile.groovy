@@ -12,7 +12,10 @@ pipeline {
 					
 					println 'actions:'+build1.getRawBuild().getActions()
 					
-					def testsResult=build1.getRawBuild().getAction(hudson.tasks.junit.TestResultAction.class)
+					
+					
+					def testsResult=build1.getRawBuild().getAction(hudson.tasks.test.AggregatedTestResultAction)
+//					def testsResult=build1.getRawBuild().getAction(hudson.tasks.junit.TestResultAction.class)
 					
 					if (testsResult == null) {
 						println("No tests")

@@ -13,6 +13,8 @@ pipeline {
 					
 					println 'actions:'+build1.rawBuild.actions
 					
+					prinln 'pwd:'+pwd()
+					
 					def templateFile = new File(".\\templates\\simple.template")
 					def engine = new SimpleTemplateEngine()
 					def template = engine.createTemplate(templateFile)

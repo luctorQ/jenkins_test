@@ -10,9 +10,12 @@ pipeline {
 								propagate: false
 					println "build1:"+build1
 					
-					if (build.getAction(hudson.tasks.junit.TestResultAction.class) == null) {
+					def testsResult=build1.getAction(hudson.tasks.junit.TestResultAction.class)
+					
+					if (testsResult == null) {
 						println("No tests")
-						return ("No Tests")
+					  }else {
+						  println('much test:'+testsResult)
 					  }
 					
 

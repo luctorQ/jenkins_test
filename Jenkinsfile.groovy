@@ -17,7 +17,8 @@ pipeline {
 						build1= build job: 'java_project1',
 						propagate: false
 					}catch(e) {
-						throw(e)
+						if(build1.result!="SUCCESS")
+						throw new hudson.AbortException(build1)
 					}
 					statusBuild.b1.status=build1.result;
 //					statusBuild.b1.msg=build1.rawBuild.writeWholeLogTo()

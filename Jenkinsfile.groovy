@@ -15,7 +15,7 @@ pipeline {
 					
 					println 'pwd:'+pwd()
 					
-					def templateFile = new File(".\\templates\\simple.template")
+					def templateFile = new File(pwd(),"templates/simple.template")
 					def engine = new SimpleTemplateEngine()
 					def template = engine.createTemplate(templateFile)
 					

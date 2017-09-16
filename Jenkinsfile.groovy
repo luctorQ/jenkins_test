@@ -27,6 +27,7 @@ pipeline {
 					if(build1.result!="SUCCESS") {
 
 						dir('abc'){
+							writeFile file:'abcdummy',text:''
 							step([$class: 'CopyArtifact',
 								projectName: 'java_project1',
 								filter: '**/surefire-report.html',

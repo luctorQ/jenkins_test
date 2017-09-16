@@ -37,7 +37,7 @@ pipeline {
 								]
 							]);
 							script{
-								if(fileExists file:'target/site') {
+								if(fileExists(file:'target/site')) {
 									zip zipFile:'smoke_report3.zip',dir:'target/site'
 								}
 							}

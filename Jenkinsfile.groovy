@@ -31,7 +31,10 @@ pipeline {
 								$class: 'SpecificBuildSelector',
 								buildNumber:build1.id
 							]
-						]); 
+						]);
+						
+						zip zipFile:'hello.zip'
+						 
 
 						throw new hudson.AbortException("build1 failed")
 					}

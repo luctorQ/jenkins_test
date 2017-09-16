@@ -16,7 +16,7 @@ pipeline {
 	stages {
 		stage('build') {
 			steps {
-				dir('smoke_tests'){ deleteDir() }
+				dir('smoke_tests_out'){ deleteDir() }
 				script{
 					def build1=null;
 					//					try {
@@ -25,21 +25,9 @@ pipeline {
 
 					println "build1 result:"+build1.result
 					if(build1.result!="SUCCESS") {
-
-						dir('abc'){
-							writeFile file:'abcdummy',text:''
-							step([$class: 'CopyArtifact',
-								projectName: 'java_project1',
-								filter: '**/surefire-report.html',
-								selector: [
-									$class: 'SpecificBuildSelector',
-									buildNumber:build1.id
-								]
-							]);
-						}
-
-						dir('smoke_tests/results'){
+						dir('smoke_tests_out'){
 							writeFile file:'dummy', text:''
+
 							step([$class: 'CopyArtifact',
 								projectName: 'java_project1',
 								filter: '**/surefire-report.html',
@@ -48,16 +36,10 @@ pipeline {
 									buildNumber:build1.id
 								]
 							]);
+							zip zipFile:'smoke_report1.zip',dir:'results/target/site'
 						}
 
 						//					step([$class: 'FileOperationsBuilder', fileOperations: [[$class: 'FileCopyOperation', excludes: '', flattenFiles: false, includes: 'target/site/*.html', targetLocation: './smoke_test_reports']]])
-						dir('smoke_tests'){
-							println 'zip0'
-							zip zipFile:'smoke_report1.zip',dir:'results/target/site'
-							println 'zip1'
-							//							stash includes: 'smoke_report1.zip', name: 'smoke_report'
-							deleteDir()
-						}
 
 						throw new hudson.AbortException("build1 failed")
 					}
@@ -115,7 +97,7 @@ pipeline {
 			emailext to: 'luchtort@gmail.com',
 			replyTo: 'pluszynski@bleak.pl',
 			subject: "test email local",
-			attachmentsPattern: 'smoke_tests/*.zip',
+			attachmentsPattern: 'smoke_tests_out/*.zip',
 			body: """
 				APPS covered by Continuous Integration Process: ${CI_COVERED_APPS.findAll({it.value}).collect({it.key.toUpperCase()})}\n
 				${CI_COVERED_APPS.ab?'nie powinno byc\n':''}

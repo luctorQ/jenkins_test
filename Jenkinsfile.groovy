@@ -43,7 +43,7 @@ pipeline {
 							println 'zip0'
 							zip zipFile:'smoke_report1.zip',dir:'results/target/site'
 							println 'zip1'
-							stash includes: 'smoke_report1.zip', name: 'smoke_report'
+//							stash includes: 'smoke_report1.zip', name: 'smoke_report'
 							deleteDir()
 						}
 
@@ -98,12 +98,12 @@ pipeline {
 		always{
 			echo 'post actions'
 
-			unstash "smoke_report"
+//			unstash "smoke_report"
 
 			emailext to: 'luchtort@gmail.com',
 			replyTo: 'pluszynski@bleak.pl',
 			subject: "test email local",
-			attachmentsPattern: '*.zip',
+			attachmentsPattern: 'smoke_tests/*.zip',
 			body: """
 				APPS covered by Continuous Integration Process: ${CI_COVERED_APPS.findAll({it.value}).collect({it.key.toUpperCase()})}\n
 				${CI_COVERED_APPS.ab?'nie powinno byc\n':''}

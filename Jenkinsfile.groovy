@@ -32,9 +32,9 @@ pipeline {
 								buildNumber:build1.id
 							]
 						]);
-						
+						println 'zip0'
 						zip zipFile:'hello.zip',dir:'target/site',archive:true
-						 
+						println 'zip1'
 
 						throw new hudson.AbortException("build1 failed")
 					}

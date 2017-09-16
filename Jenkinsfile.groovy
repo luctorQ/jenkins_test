@@ -33,7 +33,7 @@ pipeline {
 							]
 						]);
 						
-						zip zipFile:'hello.zip'
+						zip zipFile:'hello.zip',dir:'target/site'
 						 
 
 						throw new hudson.AbortException("build1 failed")

@@ -35,7 +35,8 @@ pipeline {
 									$class: 'SpecificBuildSelector',
 									buildNumber:build1.id
 								],
-								target:'ssmoke'
+								target:'ssresult',
+								flatten:true
 							]);
 							script{
 								if(fileExists(file:'target/site')) {

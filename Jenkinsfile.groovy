@@ -16,7 +16,7 @@ pipeline {
 	stages {
 		stage('build') {
 			steps {
-				dir('smoke_tests_out'){ deleteDir() }
+				dir('tmp_out'){ deleteDir() }
 				script{
 					def build1=null;
 					//					try {
@@ -25,7 +25,7 @@ pipeline {
 
 					println "build1 result:"+build1.result
 					if(build1.result!="SUCCESS") {
-						dir('smoke_tests_out'){
+						dir('tmp_out'){
 							writeFile file:'dummy', text:''
 
 							step([$class: 'CopyArtifact',
@@ -35,12 +35,12 @@ pipeline {
 									$class: 'SpecificBuildSelector',
 									buildNumber:build1.id
 								],
-								target:'ssresult',
+								target:'smoke_tests',
 								flatten:true
 							]);
 							script{
-								if(fileExists(file:'target/site')) {
-									zip zipFile:'smoke_report3.zip',dir:'target/site'
+								if(fileExists(file:'smoke_tests')) {
+									zip zipFile:'report_smoke.zip',dir:'smoke_tests'
 								}
 							}
 						}
@@ -103,7 +103,7 @@ pipeline {
 			emailext to: 'luchtort@gmail.com',
 			replyTo: 'pluszynski@bleak.pl',
 			subject: "test email local",
-			attachmentsPattern: 'smoke_tests_out/*.zip',
+			attachmentsPattern: 'tmp_out/report*.zip',
 			body: """
 				APPS covered by Continuous Integration Process: ${CI_COVERED_APPS.findAll({it.value}).collect({it.key.toUpperCase()})}\n
 				${CI_COVERED_APPS.ab?'nie powinno byc\n':''}

@@ -32,6 +32,9 @@ pipeline {
 								buildNumber:build1.id
 							]
 						]);
+						
+					step([$class: 'FileOperationsBuilder', fileOperations: [[$class: 'FileCopyOperation', excludes: '', flattenFiles: false, includes: 'target/site/*.html', targetLocation: './smoke_test_reports']]])
+					
 						println 'zip0'
 						zip zipFile:'hello.zip',dir:'target/site',archive:true
 						println 'zip1'

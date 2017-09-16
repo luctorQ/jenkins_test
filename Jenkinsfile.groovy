@@ -16,6 +16,9 @@ pipeline {
 	stages {
 		stage('build') {
 			steps {
+				dir('smoke_tests'){
+					deleteDir()
+				}
 				script{
 					def build1=null;
 					//					try {

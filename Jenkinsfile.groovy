@@ -26,7 +26,7 @@ pipeline {
 					if(build1.result!="SUCCESS") {
 						step([$class: 'CopyArtifact',
 							projectName: 'java_project1',
-							filter: 'surefire-report.html',
+							filter: '**\surefire-report.html',
 							selector: [
 								$class: 'SpecificBuildSelector',
 								buildNumber:build1.id

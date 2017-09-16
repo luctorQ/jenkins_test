@@ -36,8 +36,9 @@ pipeline {
 //					step([$class: 'FileOperationsBuilder', fileOperations: [[$class: 'FileCopyOperation', excludes: '', flattenFiles: false, includes: 'target/site/*.html', targetLocation: './smoke_test_reports']]])
 					
 						println 'zip0'
-						zip zipFile:'hello.zip',dir:'target/site',archive:true
+						zip zipFile:'smoke_report.zip',dir:'target/site'
 						println 'zip1'
+						stash includes: 'smoke_report.zip', name: 'smoke_report'
 
 						throw new hudson.AbortException("build1 failed")
 					}
@@ -90,9 +91,12 @@ pipeline {
 		always{
 			echo 'post actions'
 
+			unstash "smoke_report"
+			
 			emailext to: 'luchtort@gmail.com',
 			replyTo: 'pluszynski@bleak.pl',
 			subject: "test email local",
+			attachmentsPattern: 'smoke_report.zip',
 			body: """
 				APPS covered by Continuous Integration Process: ${CI_COVERED_APPS.findAll({it.value}).collect({it.key.toUpperCase()})}\n
 				${CI_COVERED_APPS.ab?'nie powinno byc\n':''}

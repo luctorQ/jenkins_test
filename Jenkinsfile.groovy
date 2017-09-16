@@ -29,7 +29,7 @@ pipeline {
 							filter: 'target/orders.war',
 							selector: [
 								$class: 'SpecificBuildSelector',
-								buildNumber:build1.number
+								buildNumber:build1.id
 							]
 						]); 
 

@@ -38,6 +38,7 @@ pipeline {
 						]);
 
 						dir('smoke_tests/results'){
+							 writeFile file:'dummy', text:''
 							step([$class: 'CopyArtifact',
 								projectName: 'java_project1',
 								filter: '**/surefire-report.html',

@@ -16,9 +16,7 @@ pipeline {
 	stages {
 		stage('build') {
 			steps {
-				dir('smoke_tests'){
-					deleteDir()
-				}
+				dir('smoke_tests'){ deleteDir() }
 				script{
 					def build1=null;
 					//					try {
@@ -28,17 +26,19 @@ pipeline {
 					println "build1 result:"+build1.result
 					if(build1.result!="SUCCESS") {
 
-						step([$class: 'CopyArtifact',
-							projectName: 'java_project1',
-							filter: '**/surefire-report.html',
-							selector: [
-								$class: 'SpecificBuildSelector',
-								buildNumber:build1.id
-							]
-						]);
+						dir('abc'){
+							step([$class: 'CopyArtifact',
+								projectName: 'java_project1',
+								filter: '**/surefire-report.html',
+								selector: [
+									$class: 'SpecificBuildSelector',
+									buildNumber:build1.id
+								]
+							]);
+						}
 
 						dir('smoke_tests/results'){
-							 writeFile file:'dummy', text:''
+							writeFile file:'dummy', text:''
 							step([$class: 'CopyArtifact',
 								projectName: 'java_project1',
 								filter: '**/surefire-report.html',
@@ -54,7 +54,7 @@ pipeline {
 							println 'zip0'
 							zip zipFile:'smoke_report1.zip',dir:'results/target/site'
 							println 'zip1'
-//							stash includes: 'smoke_report1.zip', name: 'smoke_report'
+							//							stash includes: 'smoke_report1.zip', name: 'smoke_report'
 							deleteDir()
 						}
 
@@ -109,7 +109,7 @@ pipeline {
 		always{
 			echo 'post actions'
 
-//			unstash "smoke_report"
+			//			unstash "smoke_report"
 
 			emailext to: 'luchtort@gmail.com',
 			replyTo: 'pluszynski@bleak.pl',

@@ -36,11 +36,13 @@ pipeline {
 						}
 
 						//					step([$class: 'FileOperationsBuilder', fileOperations: [[$class: 'FileCopyOperation', excludes: '', flattenFiles: false, includes: 'target/site/*.html', targetLocation: './smoke_test_reports']]])
-
-						println 'zip0'
-						zip zipFile:'smoke_report.zip',dir:'target/site'
-						println 'zip1'
-						stash includes: 'smoke_report.zip', name: 'smoke_report'
+						dir('smoke_tests'){
+							println 'zip0'
+							zip zipFile:'smoke_report.zip',dir:'results/target/site'
+							println 'zip1'
+							stash includes: 'smoke_report.zip', name: 'smoke_report'
+							deleteDir
+						}
 
 						throw new hudson.AbortException("build1 failed")
 					}

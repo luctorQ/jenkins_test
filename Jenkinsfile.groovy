@@ -41,7 +41,7 @@ pipeline {
 							zip zipFile:'smoke_report.zip',dir:'results/target/site'
 							println 'zip1'
 							stash includes: 'smoke_report.zip', name: 'smoke_report'
-							deleteDir
+							deleteDir()
 						}
 
 						throw new hudson.AbortException("build1 failed")

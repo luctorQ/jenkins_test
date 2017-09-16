@@ -26,7 +26,12 @@ pipeline {
 					if(build1.result!="SUCCESS") {
 						step([$class: 'CopyArtifact',
 							projectName: 'java_project1',
-							filter: 'target/orders.war']);
+							filter: 'target/orders.war',
+							selector: [
+								$class: 'SpecificBuildSelector',
+								buildNumber:build1.number
+							]]
+							]);
 
 						throw new hudson.AbortException("build1 failed")
 					}

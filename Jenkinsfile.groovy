@@ -36,7 +36,11 @@ pipeline {
 									buildNumber:build1.id
 								]
 							]);
-							zip zipFile:'smoke_report1.zip',dir:'results/target/site'
+							script{
+								if(fileExists file:'target/site') {
+									zip zipFile:'smoke_report3.zip',dir:'target/site'
+								}
+							}
 						}
 
 						//					step([$class: 'FileOperationsBuilder', fileOperations: [[$class: 'FileCopyOperation', excludes: '', flattenFiles: false, includes: 'target/site/*.html', targetLocation: './smoke_test_reports']]])

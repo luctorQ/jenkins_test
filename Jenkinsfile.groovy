@@ -27,7 +27,7 @@ pipeline {
 
 					println "build1 result:"+build1.result
 					if(build1.result!="SUCCESS") {
-						dir('smoke_tests/results'){
+						workspace('smoke_tests/results'){
 							step([$class: 'CopyArtifact',
 								projectName: 'java_project1',
 								filter: '**/surefire-report.html',

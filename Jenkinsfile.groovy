@@ -27,7 +27,7 @@ pipeline {
 					println "build1 result:"+build1.result
 					if(build1.rawBuild.result.isWorseThan(Result.SUCCESS)){
 						println ('worse than:'+Result.SUCCESS)
-						println 'culprits:'+buidl1.rawBuild.culprits
+						println 'culprits:'+build1.rawBuild.culprits
 					}
 					
 					if(build1.result!="SUCCESS") {

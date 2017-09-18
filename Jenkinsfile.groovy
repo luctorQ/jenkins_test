@@ -1,6 +1,7 @@
 import hudson.tasks.junit.TestResultAction;
 import groovy.text.SimpleTemplateEngine;
 import groovy.transform.Field;
+import hudson.model.Result;
 
 @Field
 		def CI_COVERED_APPS=[ab:false,bc:true,pc:true,cc:true]
@@ -24,6 +25,11 @@ pipeline {
 					propagate: false
 
 					println "build1 result:"+build1.result
+					build1.result.isWorseThan(Result.SUCCESS);{
+						println ('worse than:'+Result.SUCCESS)
+						println 'culprits:'+buidl1.culprits
+					}
+					
 					if(build1.result!="SUCCESS") {
 						def email_recipients=emailextrecipients([[$class: 'FirstFailingBuildSuspectsRecipientProvider'], [$class: 'CulpritsRecipientProvider']])
 						

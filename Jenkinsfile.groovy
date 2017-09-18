@@ -25,7 +25,7 @@ pipeline {
 					propagate: false
 
 					println "build1 result:"+build1.result
-					build1.result.isWorseThan(Result.SUCCESS);{
+					if(build1.result.isWorseThan(Result.SUCCESS)){
 						println ('worse than:'+Result.SUCCESS)
 						println 'culprits:'+buidl1.culprits
 					}

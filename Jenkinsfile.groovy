@@ -25,6 +25,10 @@ pipeline {
 
 					println "build1 result:"+build1.result
 					if(build1.result!="SUCCESS") {
+						def email_recipients=emailextrecipients([[$class: 'FirstFailingBuildSuspectsRecipientProvider'], [$class: 'CulpritsRecipientProvider']])
+						
+						println email_recipients;
+						
 						dir('tmp_out'){
 							writeFile file:'dummy', text:''
 

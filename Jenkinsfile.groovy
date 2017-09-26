@@ -107,6 +107,7 @@ pipeline {
 	environment { dsaf = '33' }
 	post{
 		always{
+			echo 'post build result:'+currentBuild.result
 			echo 'post actions'
 
 			//			unstash "smoke_report"

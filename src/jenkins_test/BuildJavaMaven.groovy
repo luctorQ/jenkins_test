@@ -19,9 +19,9 @@ node() {
 				mavenLocalRepo: '.repository'
 		) {
 				 // Run the maven build
-			catchError{		
+//			catchError{		
 				bat "mvn -Dmaven.test.failure.ignore=true clean install"
-			} 
+//			} 
 			println 'build result:'+currentBuild.result
 		} // withMaven will discover the generated Maven artifacts, JUnit Surefire & FailSafe reports and FindBugs reports
 

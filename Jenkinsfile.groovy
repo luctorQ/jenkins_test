@@ -24,6 +24,7 @@ pipeline {
 					build1= build job: 'java_project1',
 					propagate: false
 
+					println 'result1:'+currentBuild.rawBuild.result;
 					println "build1 result:"+build1.result
 					if(build1.rawBuild.result.isWorseThan(Result.SUCCESS)){
 						println ('worse than:'+Result.SUCCESS)

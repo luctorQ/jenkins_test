@@ -2,6 +2,9 @@ package jenkins_test
 
 node() {
 
+	stage('pre'){
+		println 'pre cbr:'+currentBuild.result
+	}
 	stage('build'){
 		echo 'build stage'
 

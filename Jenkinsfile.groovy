@@ -4,7 +4,7 @@ import groovy.transform.Field;
 import hudson.model.Result;
 
 @Field
-		def CI_COVERED_APPS=[ab:false,bc:true,pc:true,cc:true]
+def CI_COVERED_APPS=[ab:false,bc:true,pc:true,cc:true]
 
 
 def statusBuild=[

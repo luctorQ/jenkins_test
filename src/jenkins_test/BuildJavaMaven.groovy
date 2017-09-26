@@ -22,11 +22,12 @@ node() {
 			catchError{		
 				bat "mvn clean install"
 			} 
+			println 'build result:'+currentBuild.result
 		} // withMaven will discover the generated Maven artifacts, JUnit Surefire & FailSafe reports and FindBugs reports
 
 	}
 	stage('post'){
-		println 'build result:'+currentBuild.result
+		println 'post result:'+currentBuild.result
 		
 	}
 }

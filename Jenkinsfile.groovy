@@ -24,12 +24,13 @@ pipeline {
 					build1= build job: 'java_project1',
 					propagate: false
 
-					println 'result1:'+currentBuild.rawBuild.result;
+					println 'cbr result1:'+currentBuild.result;
 					println "build1 result:"+build1.result
 					if(build1.rawBuild.result.isWorseThan(Result.SUCCESS)){
 						println ('worse than:'+Result.SUCCESS)
 						println 'culprits:'+build1.rawBuild.culprits
 					}
+					println 'cbr result2:'+currentBuild.result;
 					
 					if(build1.result!="SUCCESS") {
 						def email_recipients=emailextrecipients([[$class: 'FirstFailingBuildSuspectsRecipientProvider'], [$class: 'CulpritsRecipientProvider']])
@@ -102,7 +103,12 @@ pipeline {
 				}
 			}
 		}
-		stage('reporting') { steps { echo 'reporting' } }
+		stage('reporting') { 
+			steps {
+				echo 'reporting'
+				echo 'reporting build result:'+currentBuild.result 
+			} 
+		}
 	}
 	environment { dsaf = '33' }
 	post{

@@ -117,7 +117,8 @@ pipeline {
 			echo 'post actions'
 			echo 'currentBuild description:'+currentBuild.displayName
 			script{
-				currentBuild.displayName = "#${BUILD_NUMBER}, branch ${BRANCH}"
+				//currentBuild.displayName = "#${BUILD_NUMBER}, branch ${BRANCH}"
+				currentBuild.displayName = currentBuild.displayName+' wow'
 			}
 			//			unstash "smoke_report"
 

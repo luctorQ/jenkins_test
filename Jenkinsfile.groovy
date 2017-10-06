@@ -116,8 +116,9 @@ pipeline {
 			echo 'post build result:'+currentBuild.result
 			echo 'post actions'
 			echo 'currentBuild description:'+currentBuild.description
-			currentBuild.description = "#${BUILD_NUMBER}, branch ${BRANCH}"
-			
+			script{
+				currentBuild.description = "#${BUILD_NUMBER}, branch ${BRANCH}"
+			}
 			//			unstash "smoke_report"
 
 			emailext to: 'luchtort@gmail.com',

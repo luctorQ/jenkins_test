@@ -115,9 +115,9 @@ pipeline {
 		always{
 			echo 'post build result:'+currentBuild.result
 			echo 'post actions'
-			echo 'currentBuild description:'+currentBuild.description
+			echo 'currentBuild description:'+currentBuild.displayName
 			script{
-				currentBuild.description = "#${BUILD_NUMBER}, branch ${BRANCH}"
+				currentBuild.displayName = "#${BUILD_NUMBER}, branch ${BRANCH}"
 			}
 			//			unstash "smoke_report"
 

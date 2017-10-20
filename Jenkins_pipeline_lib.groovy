@@ -1,6 +1,6 @@
 //@Library('test-lib') _
 
-library(identifier:'./shared_lib') _
+//library(identifier:'./shared_lib') _
 
 library(identifier: 'test-lib@master', retriever: modernSCM(
   [$class: 'GitSCMSource',
@@ -13,6 +13,7 @@ pipeline {
         stage('Show quote') {
             steps {
                 showQuote()
+				showSharedQuote()
             }
         }
     }

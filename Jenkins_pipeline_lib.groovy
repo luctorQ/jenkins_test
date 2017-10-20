@@ -1,4 +1,4 @@
-@Library('shared-lib-example') _
+@Library('test-lib') _
  
 pipeline {
     agent any

@@ -1,6 +1,6 @@
 //@Library('test-lib') _
 
-@Library('shared_lib') _
+ibrary(folderName:'shared_lib') _
 
 library(identifier: 'test-lib@master', retriever: modernSCM(
   [$class: 'GitSCMSource',

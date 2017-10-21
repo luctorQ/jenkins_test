@@ -2,6 +2,8 @@
 
 //library(identifier:'./shared_lib') _
 
+println 'env:'+env
+
 println 'params:'+params
 
 library(identifier: 'test-lib@master', retriever: modernSCM(

@@ -2,6 +2,8 @@
 
 //library(identifier:'./shared_lib') _
 
+println 'params:'+params
+
 library(identifier: 'test-lib@master', retriever: modernSCM(
   [$class: 'GitSCMSource',
    remote: 'https://github.com/luctorQ/jenkins_shared_lib.git',

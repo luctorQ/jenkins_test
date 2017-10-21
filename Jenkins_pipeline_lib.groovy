@@ -6,6 +6,8 @@ println 'env:'+env
 
 println 'params:'+params
 
+println 'thia:'+this
+
 library(identifier: 'test-lib@master', retriever: modernSCM(
   [$class: 'GitSCMSource',
    remote: 'https://github.com/luctorQ/jenkins_shared_lib.git',

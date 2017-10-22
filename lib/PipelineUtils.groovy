@@ -7,3 +7,6 @@ class PipelineUtils implements Serializable{
 		return "Hello: ${name}"
 	}
 }
+
+
+return this;

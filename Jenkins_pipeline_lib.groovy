@@ -29,7 +29,7 @@ pipeline {
 					
 					def PipelineUtils2=load 'lib/PipelineUtils_2.groovy'
 					def puInstance=PipelineUtils2.instance()
-					puInstance..calculateName()
+					puInstance.calculateName()
 //					def pu=utils.PU
 //					def pu=utils.getProperty('PipelineUtils')
 					//				pu.calculateName()

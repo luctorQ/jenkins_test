@@ -8,9 +8,9 @@ def showName() {
 }
 
 
-def initialize(n,lastname) {
+def initialize(n,l) {
 	name=n
-	lastname=lastname
+	lastname=l
 }
 
 return this;

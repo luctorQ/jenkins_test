@@ -8,6 +8,9 @@ class PipelineUtils implements Serializable{
 	}
 }
 
+def gogo(abc) {
+	printl 'ho abc:'+abc
+}
 
 
 // this method just to have nice access to create class by name

@@ -1,16 +1,19 @@
 package lib
 
-def setName(n) {
-	name=n
+def name
+def lastname
+
+def setName(name) {
+	this.name=name
 }
 def showName() { 
-	println 'showName:'+name+' '+lastname
+	println 'showName:'+this.name+' '+this.lastname
 }
 
 
 def initialize(n,l) {
-	name=n
-	lastname=l
+	this.name=n
+	this.lastname=l
 }
 
 return this;

@@ -2,6 +2,17 @@ package lib
 
 import groovy.transform.Field
 
+class Context implemnents Serializable{
+	
+	Integer revpc
+	Integer revbc
+	
+	def comare() {
+		return revpc<revbc
+	}
+}
+
+
 @Field
 def name
 @Field
@@ -25,6 +36,9 @@ def initialize(n,l) {
 def runU2() {
 	u2.setName('hello')
 	u2.showName()
+	Context ctx=new Context();
+	ctx.revbc=23
+	
 }
 
 

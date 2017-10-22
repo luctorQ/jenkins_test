@@ -22,7 +22,7 @@ pipeline {
 			steps{
 				script{ 
 					utils=load 'PipelineUtils.groovy'
-//					println 'PipelineUtils:'+pipeline
+					println 'PipelineUtils:'+utils
 //					def pu=pipeline.PipelineUtils
 					//				pu.calculateName()
 				}

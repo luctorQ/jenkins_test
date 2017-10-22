@@ -22,9 +22,14 @@ pipeline {
 			steps{
 				script{ 
 					utils=load 'lib/PipelineUtils_1.groovy'
+					
+					
 					println 'PipelineUtils:'+utils
 					utils.gogo('abracadabra')
-					def pu=utils.PU
+					
+					def PipelineUtils=load 'lib/PipelineUtils_2.groovy'
+					def puInstance=new PipelineUtils();
+//					def pu=utils.PU
 //					def pu=utils.getProperty('PipelineUtils')
 					//				pu.calculateName()
 				}

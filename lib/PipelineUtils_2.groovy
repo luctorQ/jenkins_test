@@ -18,4 +18,9 @@ Object getProperty(String name){
 	return this.getClass().getClassLoader().loadClass(name).newInstance();
 }
 
-return PipelineUtils2;
+def instance() {
+	println 'new instance created'
+	return new PipelineUtils2()
+}
+
+return this;

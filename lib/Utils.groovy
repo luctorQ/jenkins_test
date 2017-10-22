@@ -8,4 +8,9 @@ def showName() {
 }
 
 
+def initialize(name,lastname) {
+	name=name
+	lastname=lastname
+}
+
 return this;

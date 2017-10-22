@@ -23,7 +23,7 @@ pipeline {
 				script{ 
 					
 					def u=load 'lib/Utils.groovy'
-					u.name='Pawel'
+					u.initialize('Pawel','L')
 					u.showName()
 					
 					

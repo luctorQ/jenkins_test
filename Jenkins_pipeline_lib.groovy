@@ -14,15 +14,15 @@ library(identifier: 'test-lib@master', retriever: modernSCM(
 	credentialsId: '8f8ed4c0-b044-44f2-8029-66964ab226d2']))
 
 
-def pipeline
+def utils
 pipeline {
 	agent any
 	stages {
 		stage("Initialize"){
 			steps{
-				script{
-					pipeline=load 'PipelineUtils.groovy'
-					println 'PipelineUtils:'+pipeline
+				script{ 
+					utils=load 'PipelineUtils.groovy'
+//					println 'PipelineUtils:'+pipeline
 //					def pu=pipeline.PipelineUtils
 					//				pu.calculateName()
 				}

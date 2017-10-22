@@ -17,7 +17,7 @@ def showName() {
 
 
 def initialize(n,l) {
-	def u2=load 'Utils.groovy'
+	
 	this.name=n
 	this.lastname=l
 }

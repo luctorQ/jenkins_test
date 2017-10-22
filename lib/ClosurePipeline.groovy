@@ -1,10 +1,12 @@
-package lib;
+package lib; 
 { ab->
 	pipeline{
-		stage('hello'){
-			echo 'aaab:'+ab
-			echo 'afdafasf'
-			script{ println '%%%%%%%%%%' }
+		stages{
+			stage('hello'){
+				echo 'aaab:'+ab
+				echo 'afdafasf'
+				script{ println '%%%%%%%%%%' }
+			}
 		}
 	}
 }

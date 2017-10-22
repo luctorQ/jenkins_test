@@ -5,15 +5,16 @@ import javax.swing.GraphicsWrapper
 import groovy.transform.Field
 
 enum GW_APPS{
-	PC(0),BC(1),CC(2),CM(3)
+	PC("pc"),BC("bc"),CC("cc"),CM("cm")
 	
-	GW_APPS(int value) {
-		this.value = value
+	private final String name
+	
+	GW_APPS(String name) {
+		this.name=name
 	}
-	private final int value
 	
-	int getValue() {
-		value
+	String toString() {
+		return this.name
 	}
 }
 
@@ -68,9 +69,7 @@ def runU2() {
 	
 	String pc='PC'
 	
-	def enumed=pc as GW_APPS
-	println 'enumed:'+enumed
-	
+	println GW_APPS.BC
 	
 }
 

@@ -9,7 +9,7 @@ class PipelineUtils implements Serializable{
 }
 
 def gogo(abc) {
-	printl 'ho abc:'+abc
+	println 'ho abc:'+abc
 }
 
 

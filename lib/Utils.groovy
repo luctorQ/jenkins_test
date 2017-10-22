@@ -6,7 +6,9 @@ import groovy.transform.Field
 
 APPS_DICT=[PC:'pc',BC:'bc',CC:'cc',AB:'ab'] 
 class BuildContext implements Serializable{
-	List<Revision> requestedRevisions=new List<Revision>()
+	List eee=[]
+}
+//	List<Revision> requestedRevisions=new List<Revision>()
 
 /*	class Revision implements Serializable{
 		String appname

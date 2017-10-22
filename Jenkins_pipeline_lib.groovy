@@ -21,7 +21,7 @@ pipeline {
 		stage("Initialize"){
 			steps{
 				script{
-					pipeline=load('PipelineUtils.groovy')
+					pipeline=load 'PipelineUtils.groovy'
 					println 'PipelineUtils:'+pipeline
 					def pu=pipeline.PipelineUtils
 					//				pu.calculateName()

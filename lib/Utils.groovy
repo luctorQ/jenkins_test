@@ -23,7 +23,7 @@ def initialize(n,l) {
 }
 
 def runU2() {
-	u2.name='hello'
+	u2.setName('hello')
 	u2.showName()
 }
 

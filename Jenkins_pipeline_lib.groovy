@@ -22,8 +22,8 @@ pipeline {
 			steps{
 				script{
 					pipeline=load('lib/PipelineUtils.groovy')
-					println 'PipelineUtils:'+PipelineUtils
-					def pu=new PipelineUtils.PipelineUtils()
+					println 'PipelineUtils:'+pipeline
+					def pu=pipeline.PipelineUtils
 					//				pu.calculateName()
 				}
 			}

@@ -34,7 +34,7 @@ pipeline {
 					
 					def clos=load 'lib/ClosurePipeline.groovy'
 					println 'clos:'+clos
-					clos()
+					clos(this)
 					
 //					def pu=utils.PU
 //					def pu=utils.getProperty('PipelineUtils')

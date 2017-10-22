@@ -32,7 +32,8 @@ pipeline {
 					def aa=puInstance.calculateName()
 					println('aaaa:'+aa)
 					
-					load 'lib/ClosurePipeline.groovy'
+					def clos=load 'lib/ClosurePipeline.groovy'
+					clos()
 					
 //					def pu=utils.PU
 //					def pu=utils.getProperty('PipelineUtils')

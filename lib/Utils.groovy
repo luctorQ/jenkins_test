@@ -5,7 +5,7 @@ import javax.swing.GraphicsWrapper
 import groovy.transform.Field
 
 APPS_DICT=[PC:'pc',BC:'bc',CC:'cc',AB:'ab'] 
-
+/*
 class Context implements Serializable{
 	def List<Revision> requestedRevisions=new List<Revision>()
 
@@ -19,7 +19,7 @@ class Context implements Serializable{
 		}
 	}
 		
-}
+}*/
 
 
 

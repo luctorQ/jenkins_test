@@ -2,7 +2,7 @@ package lib
 
 import groovy.transform.Field
 
-class Context implemnents Serializable{
+class Context implements Serializable {
 	
 	Integer revpc
 	Integer revbc
@@ -37,7 +37,7 @@ def runU2() {
 	u2.setName('hello')
 	u2.showName()
 	Context ctx=new Context();
-	ctx.revbc=23
+	ctx.revbc=443
 	
 }
 

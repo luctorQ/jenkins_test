@@ -19,11 +19,13 @@ pipeline {
 	agent any
 	stages {
 		stage("Initialize"){
-			script{
-				PipelineUtils=load('lib/PipelineUtils.groovy')
-				println 'PipelineUtils:'+PipelineUtils
-//				def pu=new PipelineUtils()
-//				pu.calculateName()
+			steps{
+				script{
+					PipelineUtils=load('lib/PipelineUtils.groovy')
+					println 'PipelineUtils:'+PipelineUtils
+					//				def pu=new PipelineUtils()
+					//				pu.calculateName()
+				}
 			}
 		}
 		stage('Show quote') {

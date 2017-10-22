@@ -9,13 +9,13 @@ APPS_DICT=[PC:'pc',BC:'bc',CC:'cc',AB:'ab']
 
 class BuildContext implements Serializable{
 
-	List<Revision> requestedRevisions=[]
+	List requestedRevisions=[]
 
 	class Revision implements Serializable{
 		String appname
 		Integer revision
 		
-		Revision(String appname, Ingeter revision) {
+		Revision(String appname, Integer revision) {
 			this.appname=appname
 			this.revision=revision
 		}

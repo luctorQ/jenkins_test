@@ -22,6 +22,10 @@ def initialize(n,l) {
 	this.lastname=l
 }
 
+def runU2() {
+	u2.name='hello'
+	u2.showName()
+}
 
 
 return this;

@@ -27,6 +27,8 @@ pipeline {
 					u.lastname='Kowalski'
 					u.showName()
 					
+					u.runU2()
+					
 					
 					utils=load 'lib/PipelineUtils_1.groovy'
 					

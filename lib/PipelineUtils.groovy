@@ -1,6 +1,6 @@
 package lib
 
-def class PipelineUtils implements Serializable{
+class PipelineUtils implements Serializable{
 	def name
 	
 	String calculateName() {
@@ -9,6 +9,7 @@ def class PipelineUtils implements Serializable{
 }
 
 
+def PU=PipelineUtils
 
 // this method just to have nice access to create class by name
 Object getProperty(String name){

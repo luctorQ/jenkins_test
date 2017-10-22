@@ -43,7 +43,7 @@ pipeline {
 		stage('Show quote') {
 			steps {
 				showQuote()
-				showSharedQuote()
+//				showSharedQuote()
 			}
 		}
 	}

@@ -24,7 +24,7 @@ pipeline {
 					
 					def u=load 'lib/Utils.groovy'
 					u.name='Pawel'
-					u.showName();
+					u.showName()
 					
 					
 					utils=load 'lib/PipelineUtils_1.groovy'

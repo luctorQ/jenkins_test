@@ -2,7 +2,7 @@ package lib
 
 def name;
 
-def showName() {
+def showName() { 
 	println 'showName:'+name
 }
 

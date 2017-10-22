@@ -27,8 +27,8 @@ pipeline {
 					println 'PipelineUtils:'+utils
 					utils.gogo('abracadabra')
 					
-					def PipelineUtils=load 'lib/PipelineUtils_2.groovy'
-//					def puInstance=new PipelineUtils();
+					def PipelineUtils2=load 'lib/PipelineUtils_2.groovy'
+					def puInstance=new PipelineUtils2();
 //					def pu=utils.PU
 //					def pu=utils.getProperty('PipelineUtils')
 					//				pu.calculateName()

@@ -6,9 +6,8 @@ import groovy.transform.Field
 
 APPS_DICT=[PC:'pc',BC:'bc',CC:'cc',AB:'ab'] 
 
-
 class Context implements Serializable{
-	def List<Revision> requestedRevisions=[]
+	def List<Revision> requestedRevisions=new List<Revision>()
 
 	class Revision implements Serializable{
 		String appname
@@ -23,19 +22,6 @@ class Context implements Serializable{
 }
 
 
-enum GW_APPS{
-	PC("pc"),BC("bc"),CC("cc"),CM("cm")
-	
-	private final String name
-	
-	GW_APPS(String name) {
-		this.name=name
-	}
-	
-	String toString() {
-		return this.name
-	}
-}
 
 class BuildInfo implements Serializable{
 	Integer svnrevision

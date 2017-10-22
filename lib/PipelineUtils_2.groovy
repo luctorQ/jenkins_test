@@ -1,6 +1,6 @@
 package lib
 
-class PipelineUtils implements Serializable{
+class PipelineUtils2 implements Serializable{
 	def name
 	
 	String calculateName() {
@@ -18,4 +18,4 @@ Object getProperty(String name){
 	return this.getClass().getClassLoader().loadClass(name).newInstance();
 }
 
-return PipelineUtils;
+return PipelineUtils2;

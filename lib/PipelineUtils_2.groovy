@@ -4,6 +4,7 @@ class PipelineUtils2 implements Serializable{
 	def name
 	
 	String calculateName() {
+		println "calculateName:"+name
 		return "Hello: ${name}"
 	}
 }

@@ -22,8 +22,8 @@ pipeline {
 			script{
 				PipelineUtils=load('lib/PipelineUtils.groovy')
 				println 'PipelineUtils:'+PipelineUtils
-				def pu=new PipelineUtils()
-				pu.calculateName()
+//				def pu=new PipelineUtils()
+//				pu.calculateName()
 			}
 		}
 		stage('Show quote') {

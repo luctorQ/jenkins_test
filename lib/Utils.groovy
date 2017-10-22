@@ -4,7 +4,24 @@ import javax.swing.GraphicsWrapper
 
 import groovy.transform.Field
 
-APPS_DICT=[pc:'pc',bc:'bc',cc:'cc',ab:'ab'] 
+APPS_DICT=[PC:'pc',BC:'bc',CC:'cc',AB:'ab'] 
+
+
+class Context implements Serializable{
+	def List<Revision> requestedRevisions=[]
+
+	class Revision {
+		String appname
+		Integer revision
+		
+		Revision(String appname, Ingeter revision) {
+			this.appname=appname
+			this.revision=revision
+		}
+	}
+		
+}
+
 
 enum GW_APPS{
 	PC("pc"),BC("bc"),CC("cc"),CM("cm")

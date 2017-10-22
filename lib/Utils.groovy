@@ -1,7 +1,8 @@
 package lib
 
-def name;
-
+def setName(n) {
+	name=n
+}
 def showName() { 
 	println 'showName:'+name
 }

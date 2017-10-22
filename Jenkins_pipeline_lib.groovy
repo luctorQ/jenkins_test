@@ -23,7 +23,7 @@ pipeline {
 				script{ 
 					utils=load 'PipelineUtils.groovy'
 					println 'PipelineUtils:'+utils
-//					def pu=pipeline.PipelineUtils
+					def pu=utils.PipelineUtils
 					//				pu.calculateName()
 				}
 			}

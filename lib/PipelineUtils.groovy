@@ -1,6 +1,6 @@
 package lib
 
-class PipelineUtils implements Serializable{
+def class PipelineUtils implements Serializable{
 	def name
 	
 	String calculateName() {

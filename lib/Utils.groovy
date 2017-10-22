@@ -8,9 +8,9 @@ def showName() {
 }
 
 
-def initialize(name,lastname) {
-	this.name=name
-	this.lastname=lastname
+def initialize(n,lastname) {
+	name=n
+	lastname=lastname
 }
 
 return this;

@@ -21,6 +21,12 @@ pipeline {
 		stage("Initialize"){
 			steps{
 				script{ 
+					
+					def u=load 'lib/Utils.groovy'
+					u.name='Pawel'
+					u.showName();
+					
+					
 					utils=load 'lib/PipelineUtils_1.groovy'
 					
 					
@@ -32,10 +38,10 @@ pipeline {
 					def aa=puInstance.calculateName()
 					println('aaaa:'+aa)
 					
-					def clos=load 'lib/ClosurePipeline.groovy'
+/*					def clos=load 'lib/ClosurePipeline.groovy'
 					println 'clos:'+clos
 					clos(this)
-					
+*/					
 //					def pu=utils.PU
 //					def pu=utils.getProperty('PipelineUtils')
 					//				pu.calculateName()

@@ -5,7 +5,7 @@ import javax.swing.GraphicsWrapper
 import groovy.transform.Field
 
 enum GW_APPS{
-	PC,BC,CC,CM
+	PC(0),BC(1),CC(2),CM(3)
 	
 	GW_APPS(int value) {
 		this.value = value

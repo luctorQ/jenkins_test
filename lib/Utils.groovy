@@ -4,7 +4,7 @@ def setName(n) {
 	name=n
 }
 def showName() { 
-	println 'showName:'+name+' '+'lastname'
+	println 'showName:'+name+' '+lastname
 }
 
 

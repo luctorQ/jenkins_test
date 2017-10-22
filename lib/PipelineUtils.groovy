@@ -9,4 +9,10 @@ class PipelineUtils implements Serializable{
 }
 
 
+
+// this method just to have nice access to create class by name
+Object getProperty(String name){
+	return this.getClass().getClassLoader().loadClass(name).newInstance();
+}
+
 return this;

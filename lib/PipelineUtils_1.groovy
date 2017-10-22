@@ -8,8 +8,10 @@ class PipelineUtils implements Serializable{
 	}
 }
 
+def gogo(abc) {
+	println 'ho abc:'+abc
+}
 
-def PU=PipelineUtils
 
 // this method just to have nice access to create class by name
 Object getProperty(String name){

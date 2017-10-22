@@ -21,7 +21,7 @@ pipeline {
 		stage("Initialize"){
 			steps{
 				script{ 
-					utils=load 'PipelineUtils.groovy'
+					utils=load 'lib/PipelineUtils_1.groovy'
 					println 'PipelineUtils:'+utils
 					utils.gogo('abracadabra')
 					def pu=utils.PU

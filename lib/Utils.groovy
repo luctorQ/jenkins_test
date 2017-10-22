@@ -4,6 +4,8 @@ import javax.swing.GraphicsWrapper
 
 import groovy.transform.Field
 
+APPS_DICT=[pc:'pc',bc:'bc',cc:'cc',ab:'ab'] 
+
 enum GW_APPS{
 	PC("pc"),BC("bc"),CC("cc"),CM("cm")
 	
@@ -69,7 +71,7 @@ def runU2() {
 	
 	String pc='PC'
 	
-	println GW_APPS.BC
+	println APPS_DICT.ab
 	
 }
 

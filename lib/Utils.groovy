@@ -10,7 +10,7 @@ APPS_DICT=[PC:'pc',BC:'bc',CC:'cc',AB:'ab']
 class Context implements Serializable{
 	def List<Revision> requestedRevisions=[]
 
-	class Revision {
+	class Revision implements Serializable{
 		String appname
 		Integer revision
 		

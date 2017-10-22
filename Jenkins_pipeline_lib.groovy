@@ -33,6 +33,7 @@ pipeline {
 					println('aaaa:'+aa)
 					
 					def clos=load 'lib/ClosurePipeline.groovy'
+					println 'clos:'+clos
 					clos()
 					
 //					def pu=utils.PU

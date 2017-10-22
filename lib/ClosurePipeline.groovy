@@ -8,4 +8,3 @@ package lib
 	}
 }
 
-return this

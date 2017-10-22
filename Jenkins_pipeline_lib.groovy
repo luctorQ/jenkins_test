@@ -24,6 +24,7 @@ pipeline {
 					
 					def u=load 'lib/Utils.groovy'
 					u.initialize('Pawel','L')
+					u.lastname='Kowalski'
 					u.showName()
 					
 					

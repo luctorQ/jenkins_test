@@ -6,22 +6,19 @@ import groovy.transform.Field
 
 APPS_DICT=[PC:'pc',BC:'bc',CC:'cc',AB:'ab'] 
 
-
-class BuildContext implements Serializable{
+class Revision implements Serializable{
+	String appname
+	Integer revision
 	
-	class Revision implements Serializable{
-		String appname
-		Integer revision
-		
-		Revision(String appname, Integer revision) {
-			this.appname=appname
-			this.revision=revision
-		}
+	Revision(String appname, Integer revision) {
+		this.appname=appname
+		this.revision=revision
 	}
-	
+}
+
+class BuildContext implements Serializable{	
 	List<Revision> requestedRevisions=[]
-
-
+	
 }
 
 
@@ -46,7 +43,21 @@ class Context implements Serializable {
 	def comare() {
 		return revpc<revbc
 	}
+	String toString(){
+		return "revbc:${this.revbc},revpc:${this.revpc}" 
+	}
 }
+
+
+def aaa=[revbc:56,revpc:88]
+
+
+Context c=aaa as Context
+
+
+println 'map as context:'+c.toString()
+
+
 
 
 @Field

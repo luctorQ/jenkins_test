@@ -19,6 +19,50 @@ library(identifier: 'test-lib@master', retriever: modernSCM(
  */
 def utils
 
+List params1 = []
+List props = []
+
+com.cwctravel.hudson.plugins.extended_choice_parameter.ExtendedChoiceParameterDefinition test = new com.cwctravel.hudson.plugins.extended_choice_parameter.ExtendedChoiceParameterDefinition(
+	"name",
+	"PT_CHECKBOX",
+	"VALUE, A, B",
+	null,//project name
+	null,
+	null,
+	null,
+	null,// bindings
+	null,
+	null, // propertykey
+	"VALUE, B", //default value
+	null,
+	null,
+	null,
+	null, //default bindings
+	null,
+	null,
+	null, //descriptionPropertyValue
+	null,
+	null,
+	null,
+	null,
+	null,
+	null,
+	null,// javascript file
+	null, // javascript
+	false, // save json param to file
+	false, // quote
+	2, // visible item count
+	"DESC",
+	","
+)
+
+params1 << test
+//props << parameters(params)
+
+println 'paramsddddd:'+params1
+
+
+
 properties([parameters([
 				string(name: 'BRANCH', defaultValue: 'master'),
 				string(name: 'BRANCH_1', defaultValue: 'master')

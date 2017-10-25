@@ -23,7 +23,7 @@ pipeline {
 	parameters {
 		booleanParam(defaultValue: true, description: '', name: 'userFlag')
 		booleanParam(defaultValue: true, description: '', name: 'userFlag11')
-		esp
+		com.cwctravel.hudson.plugins.extended_choice_parameter.ExtendedChoiceParameterDefinition()
 		
 	}
 	stages {

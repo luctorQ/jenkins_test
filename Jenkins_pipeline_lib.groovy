@@ -14,7 +14,8 @@ library(identifier: 'test-lib@master', retriever: modernSCM(
 	credentialsId: '8f8ed4c0-b044-44f2-8029-66964ab226d2']))
 
 
-def abc=com.cwctravel.hudson.plugins.extended_choice_parameter.ExtendedChoiceParameterDefinition()
+def esp=new com.cwctravel.hudson.plugins.extended_choice_parameter.ExtendedChoiceParameterDefinition()
+println 'esp:'+esp
 
 def utils
 pipeline {
@@ -22,6 +23,7 @@ pipeline {
 	parameters {
 		booleanParam(defaultValue: true, description: '', name: 'userFlag')
 		booleanParam(defaultValue: true, description: '', name: 'userFlag11')
+		esp
 		
 	}
 	stages {

@@ -15,14 +15,14 @@ library(identifier: 'test-lib@master', retriever: modernSCM(
 
 
 /*def esp=new com.cwctravel.hudson.plugins.extended_choice_parameter.ExtendedChoiceParameterDefinition()
-println 'esp:'+esp
-*/
+ println 'esp:'+esp
+ */
 def utils
 
 properties([parameters([
-	string(name: 'BRANCH', defaultValue: 'master')]),
-	string(name: 'BRANCH_1', defaultValue: 'master')])
-])
+				string(name: 'BRANCH', defaultValue: 'master'),
+				string(name: 'BRANCH_1', defaultValue: 'master')
+			])])
 
 pipeline {
 	agent any
@@ -34,33 +34,33 @@ pipeline {
 	stages {
 		stage("Initialize"){
 			steps{
-				script{ 
-					
+				script{
+
 					def u=load 'lib/Utils.groovy'
 					u.initialize('Pawel','L')
 					u.lastname='Kowalski'
 					u.showName()
-					
+
 					u.runU2()
-					
-					
+
+
 					utils=load 'lib/PipelineUtils_1.groovy'
-					
-					
+
+
 					println 'PipelineUtils:'+utils
 					utils.gogo('abracadabra')
-					
+
 					def PipelineUtils2=load 'lib/PipelineUtils_2.groovy'
 					def puInstance=PipelineUtils2.instance()
 					def aa=puInstance.calculateName()
 					println('aaaa:'+aa)
-					
-/*					def clos=load 'lib/ClosurePipeline.groovy'
-					println 'clos:'+clos
-					clos(this)
-*/					
-//					def pu=utils.PU
-//					def pu=utils.getProperty('PipelineUtils')
+
+					/*					def clos=load 'lib/ClosurePipeline.groovy'
+					 println 'clos:'+clos
+					 clos(this)
+					 */					
+					//					def pu=utils.PU
+					//					def pu=utils.getProperty('PipelineUtils')
 					//				pu.calculateName()
 				}
 			}
@@ -68,7 +68,7 @@ pipeline {
 		stage('Show quote') {
 			steps {
 				showQuote()
-//				showSharedQuote()
+				//				showSharedQuote()
 			}
 		}
 	}

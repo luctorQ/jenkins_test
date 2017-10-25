@@ -62,11 +62,12 @@ params1 << test
 println 'paramsddddd:'+params1
 
 
-
 properties([parameters([
 				string(name: 'BRANCH', defaultValue: 'master'),
 				string(name: 'BRANCH_1', defaultValue: 'master')
 			])])
+
+properties([parameters(params1)])
 
 pipeline {
 	agent any

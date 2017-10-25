@@ -20,12 +20,7 @@ println 'esp:'+esp
 def utils
 pipeline {
 	agent any
-	script{
-		parameters [
-			booleanParam(defaultValue: true, description: '', name: 'userFlag3333')
-		]
-		
-	}
+	properties([parameters([string(defaultValue: '', description: '', name: 'param1')]), pipelineTriggers([])])
 /*	parameters {
 		booleanParam(defaultValue: true, description: '', name: 'userFlag')
 		booleanParam(defaultValue: true, description: '', name: 'userFlag11')

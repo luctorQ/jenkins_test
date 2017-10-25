@@ -17,6 +17,9 @@ library(identifier: 'test-lib@master', retriever: modernSCM(
 def utils
 pipeline {
 	agent any
+	parameters {
+		booleanParam(defaultValue: true, description: '', name: 'userFlag')
+	}
 	stages {
 		stage("Initialize"){
 			steps{

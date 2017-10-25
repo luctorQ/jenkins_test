@@ -23,12 +23,11 @@ properties([parameters([string(name: 'BRANCH', defaultValue: 'master')])])
 
 pipeline {
 	agent any
-/*	parameters {
+	parameters {
 		booleanParam(defaultValue: true, description: '', name: 'userFlag')
-		booleanParam(defaultValue: true, description: '', name: 'userFlag11')
-		
+		booleanParam(defaultValue: true, description: '', name: 'userFlag11')		
 	}
-*/	stages {
+	stages {
 		stage("Initialize"){
 			steps{
 				script{ 

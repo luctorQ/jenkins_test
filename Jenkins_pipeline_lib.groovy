@@ -14,23 +14,14 @@ library(identifier: 'test-lib@master', retriever: modernSCM(
 	credentialsId: '8f8ed4c0-b044-44f2-8029-66964ab226d2']))
 
 
+def abc=com.cwctravel.hudson.plugins.extended_choice_parameter.ExtendedChoiceParameterDefinition()
+
 def utils
 pipeline {
 	agent any
 	parameters {
 		booleanParam(defaultValue: true, description: '', name: 'userFlag')
 		booleanParam(defaultValue: true, description: '', name: 'userFlag11')
-		[$class: 'ExtensibleChoiceParameterDefinition',
-			choiceListProvider: [
-			   $class: 'TextareaChoiceListProvider',
-			   choiceListText: 'foo\nbar',
-			   defaultChoice: 'bar',
-			   addEditedValue: false,
-		   ],
-		   description: 'blah blah blah blah',
-		   editable: true,
-		   name: 'choose_mnt'
-		]
 		
 	}
 	stages {

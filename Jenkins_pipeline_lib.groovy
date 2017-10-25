@@ -20,7 +20,7 @@ println 'esp:'+esp
 def utils
 pipeline {
 	agent any
-	properties([parameters([string(defaultValue: '', description: '', name: 'param1')]), pipelineTriggers([])])
+	options([parameters([string(defaultValue: '', description: '', name: 'param1')]), pipelineTriggers([])])
 /*	parameters {
 		booleanParam(defaultValue: true, description: '', name: 'userFlag')
 		booleanParam(defaultValue: true, description: '', name: 'userFlag11')

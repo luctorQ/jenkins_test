@@ -20,6 +20,17 @@ pipeline {
 	parameters {
 		booleanParam(defaultValue: true, description: '', name: 'userFlag')
 		booleanParam(defaultValue: true, description: '', name: 'userFlag11')
+		[$class: 'ExtensibleChoiceParameterDefinition',
+			choiceListProvider: [
+			   $class: 'TextareaChoiceListProvider',
+			   choiceListText: 'foo\nbar',
+			   defaultChoice: 'bar',
+			   addEditedValue: false,
+		   ],
+		   description: 'blah blah blah blah',
+		   editable: true,
+		   name: 'choose_mnt'
+		]
 		
 	}
 	stages {

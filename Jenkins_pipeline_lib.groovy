@@ -19,13 +19,17 @@ println 'esp:'+esp
 */
 def utils
 
-properties([parameters([string(name: 'BRANCH', defaultValue: 'master')])])
+properties([parameters([
+	string(name: 'BRANCH', defaultValue: 'master')]),
+	string(name: 'BRANCH_1', defaultValue: 'master')])
+])
 
 pipeline {
 	agent any
 	parameters {
 		booleanParam(defaultValue: true, description: '', name: 'userFlag')
-		booleanParam(defaultValue: true, description: '', name: 'userFlag11')		
+		booleanParam(defaultValue: true, description: '', name: 'userFlag11')
+		booleanParam(defaultValue: true, description: '', name: 'userFlag_2')
 	}
 	stages {
 		stage("Initialize"){

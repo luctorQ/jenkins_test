@@ -18,9 +18,11 @@ library(identifier: 'test-lib@master', retriever: modernSCM(
 println 'esp:'+esp
 */
 def utils
+
+properties([parameters([string(name: 'BRANCH', defaultValue: 'master')])])
+
 pipeline {
 	agent any
-	options{parameters([string(defaultValue: '', description: '', name: 'param1')])}
 /*	parameters {
 		booleanParam(defaultValue: true, description: '', name: 'userFlag')
 		booleanParam(defaultValue: true, description: '', name: 'userFlag11')

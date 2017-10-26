@@ -52,6 +52,10 @@ import org.boon.Boon;
 import com.hastingsdirect.ep.ExtendedProperties;
 import com.hastingsdirect.sql.CMDBConnection;
 
+def conn=CMDBConnection.createConnection()
+conn.close()
+conn=null
+
 ExtendedProperties ep=new ExtendedProperties()
 def a=ep.test()
 println 'aaaaaa:'+a

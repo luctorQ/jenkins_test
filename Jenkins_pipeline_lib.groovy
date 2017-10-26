@@ -38,12 +38,6 @@ List props = []
 def groovyscript="""
 import org.boon.Boon;
 
-def sqlFn = (new GroovyShell()).parse(new File(env.WORKSPACE))
-
-
-//import org.jenkinsci.plugins.workflow.libs.Library
-
-//@Library('test-lib') _
 //import com.hastingsdirect.ExtendedProperties;
 
 def jsonEditorOptions = Boon.fromJson(/{

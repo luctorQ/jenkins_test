@@ -6,6 +6,7 @@ import com.hastingsdirect.ep.ExtendedProperties
 def sql=CMDBConnection.createConnection()
 println 'cmdbconnection:'+sql
 sql.close()
+sql=null
 
 ExtendedProperties ep=new ExtendedProperties()
 

@@ -47,8 +47,8 @@ List params1 = []
 List props = []
 
 def groovyscript="""
-import org.boon.Boon;
 
+import org.boon.Boon;
 import com.hastingsdirect.ep.ExtendedProperties;
 
 ExtendedProperties ep=new ExtendedProperties()

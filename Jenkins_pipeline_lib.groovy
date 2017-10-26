@@ -1,7 +1,4 @@
-//@Library('test-lib') _
-
-
-@Library('test-lib')
+@Library('test-lib') _
 import com.hastingsdirect.ExtendedProperties
 /*
 

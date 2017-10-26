@@ -34,9 +34,9 @@ List props = []
 
 def groovyscript="""
 import org.boon.Boon;
-//import org.jenkinsci.plugins.workflow.libs.Library
+import org.jenkinsci.plugins.workflow.libs.Library
 
-//@Library('test-lib') _
+@Library('test-lib') _
 import com.hastingsdirect.ExtendedProperties;
 
 def jsonEditorOptions = Boon.fromJson(/{

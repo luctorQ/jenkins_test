@@ -38,7 +38,9 @@ List props = []
 def groovyscript="""
 import org.boon.Boon;
 
-import com.hastingsdirect.ExtendedProperties;
+import com.hastingsdirect.ExtendedProperties
+
+ExtendedProperties ep=new ExtendedProperties()
 
 def jsonEditorOptions = Boon.fromJson(/{
 	   disable_edit_json: true,
@@ -91,7 +93,7 @@ com.cwctravel.hudson.plugins.extended_choice_parameter.ExtendedChoiceParameterDe
 	groovyscript,//groovy script
 	null,
 	null,// bindings
-	"C:/Users/PLUSZYNSKI/git/jenkins_shared_lib/jenkins_shared_lib.jar",//groovyclasspath
+	"c:/tmp/libs_jenkins_global/jenkins_shared_lib.jar",//groovyclasspath
 	//"c:/Users/PLUSZYNSKI/.jenkins/plugins/workflow-cps-global-lib/WEB-INF/lib/workflow-cps-global-lib.jar",
 //	"c:/Users/PLUSZYNSKI/.jenkins/jobs/pipeline_test_libs/workspace@libs/test-lib/src",//groovyclasspath
 	null, // propertykey

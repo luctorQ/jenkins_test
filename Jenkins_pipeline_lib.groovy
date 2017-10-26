@@ -35,6 +35,7 @@ import org.boon.Boon;
 import org.jenkinsci.plugins.workflow.libs.Library
 
 @Library('test-lib') _
+showQuote()
 //import com.hastingsdirect.ExtendedProperties;
 
 def jsonEditorOptions = Boon.fromJson(/{

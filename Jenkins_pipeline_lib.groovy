@@ -77,7 +77,7 @@ com.cwctravel.hudson.plugins.extended_choice_parameter.ExtendedChoiceParameterDe
 	null,// bindings
 	null,
 	null, // propertykey
-	null,"VALUE, B", //default value
+	null,//"VALUE, B", //default value
 	null,
 	null,
 	null,

@@ -7,7 +7,7 @@ CMDBConnection cmdb;
 Class.forName("org.h2.Driver")
 
 def sql=CMDBConnection.createConnection()
-sql.close()
+//sql.close()
 
 ExtendedProperties ep=new ExtendedProperties()
 

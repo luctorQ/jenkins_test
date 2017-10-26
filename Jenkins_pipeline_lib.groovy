@@ -1,5 +1,5 @@
 @Library('test-lib') _
-import com.hastingsdirect.ExtendedProperties
+import com.hastingsdirect.ep.ExtendedProperties
 
 ExtendedProperties ep=new ExtendedProperties()
 

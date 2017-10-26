@@ -4,6 +4,8 @@ import com.hastingsdirect.ExtendedProperties
 ExtendedProperties ep=new ExtendedProperties()
 
 
+println 'pwddd:'+pwd()
+
 /*def cl=getClass().getClassLoader();
 String[] classpath = cl.getClasspath().split(":");
 print 'classpath:'+classpath;

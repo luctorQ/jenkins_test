@@ -4,10 +4,10 @@ import com.hastingsdirect.ExtendedProperties
 ExtendedProperties ep=new ExtendedProperties()
 
 
-def cl=getClass().getClassLoader();
+/*def cl=getClass().getClassLoader();
 String[] classpath = cl.getClasspath().split(":");
 print 'classpath:'+classpath;
-
+*/
 //library(identifier:'./shared_lib') _
 
 println 'env:'+env
@@ -32,7 +32,11 @@ List props = []
 
 def groovyscript="""
 import org.boon.Boon;
+import org.jenkinsci.plugins.workflow.libs.Library
+
+@Library('test-lib')
 import com.hastingsdirect.ExtendedProperties;
+
 def jsonEditorOptions = Boon.fromJson(/{
 	   disable_edit_json: true,
 	   disable_properties: true,

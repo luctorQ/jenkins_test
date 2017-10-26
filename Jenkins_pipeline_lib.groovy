@@ -3,6 +3,9 @@
 import com.hastingsdirect.sql.*
 import com.hastingsdirect.ep.ExtendedProperties
 
+def cn=new CMDBConnection()
+println 'connection:'+cn
+
 def sql=CMDBConnection.createConnection()
 println 'cmdbconnection:'+sql
 sql.close()

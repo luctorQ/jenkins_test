@@ -22,18 +22,62 @@ def utils
 List params1 = []
 List props = []
 
+def groovyscript="""
+import org.boon.Boon;
+
+def jsonEditorOptions = Boon.fromJson(/{
+	   disable_edit_json: true,
+	   disable_properties: true,
+	   no_additional_properties: true,
+	   disable_collapse: true,
+	   disable_array_add: true,
+	   disable_array_delete: true,
+	   disable_array_reorder: true,
+	   theme: "bootstrap2",
+	   iconlib:"fontawesome4",
+	   schema: {
+		 "type": "object",
+		 "title": "Name",
+		 "properties": {
+		   "first_name": {
+			 "type": "string",
+			 "propertyOrder" : 1
+		   },
+		   "last_name": {
+			 "type": "string",
+			 "propertyOrder" : 2
+		   },
+		   "full_name": {
+			 "type": "string",
+			 "propertyOrder" : 3,
+			 "template": "{{fname}} {{lname}}",
+			 "watch": {
+			   "fname": "first_name",
+			   "lname": "last_name"
+			 }
+		   }
+		 }
+	   },
+	   startval: {
+		   "first_name" : "John",
+		   "last_name" : "Doe",
+		   "full_name" : "John Doe"
+	   }
+}/);
+"""
+
 com.cwctravel.hudson.plugins.extended_choice_parameter.ExtendedChoiceParameterDefinition test = new com.cwctravel.hudson.plugins.extended_choice_parameter.ExtendedChoiceParameterDefinition(
-	"name",
-	"PT_CHECKBOX",
-	"VALUE, A, B",
+	"JSONPARAM", //name
+	"PT_JSON",//type
+	null,//value
 	null,//project name
-	null,
+	groovyscript,//groovy script
 	null,
 	null,
 	null,// bindings
 	null,
 	null, // propertykey
-	"VALUE, B", //default value
+	null,"VALUE, B", //default value
 	null,
 	null,
 	null,
@@ -52,7 +96,7 @@ com.cwctravel.hudson.plugins.extended_choice_parameter.ExtendedChoiceParameterDe
 	false, // save json param to file
 	false, // quote
 	2, // visible item count
-	"DESC",
+	"DESC", //description
 	","
 )
 

@@ -50,11 +50,6 @@ def groovyscript="""
 import org.boon.Boon;
 
 import com.hastingsdirect.ep.ExtendedProperties;
-import com.hastingsdirect.sql.CMDBConnection;
-
-//def c=CMDBConnection.createConnection()
-//c.close()
-//c=null
 
 ExtendedProperties ep=new ExtendedProperties()
 def a=ep.test()

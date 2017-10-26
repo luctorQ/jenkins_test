@@ -13,6 +13,7 @@ print 'classpath:'+classpath;
 //library(identifier:'./shared_lib') _
 
 println 'env:'+env
+println 'env.WORKSPACE:'+env.WORKSPACE
 
 println 'params:'+params
 
@@ -27,6 +28,8 @@ library(identifier: 'test-lib@master', retriever: modernSCM(
 /*def esp=new com.cwctravel.hudson.plugins.extended_choice_parameter.ExtendedChoiceParameterDefinition()
  println 'esp:'+esp
  */
+
+
 def utils
 
 List params1 = []
@@ -34,10 +37,14 @@ List props = []
 
 def groovyscript="""
 import org.boon.Boon;
-import org.jenkinsci.plugins.workflow.libs.Library
 
-@Library('test-lib') _
-import com.hastingsdirect.ExtendedProperties;
+def sqlFn = (new GroovyShell()).parse(new File(env.WORKSPACE))
+
+
+//import org.jenkinsci.plugins.workflow.libs.Library
+
+//@Library('test-lib') _
+//import com.hastingsdirect.ExtendedProperties;
 
 def jsonEditorOptions = Boon.fromJson(/{
 	   disable_edit_json: true,
@@ -90,8 +97,9 @@ com.cwctravel.hudson.plugins.extended_choice_parameter.ExtendedChoiceParameterDe
 	groovyscript,//groovy script
 	null,
 	null,// bindings
+	null,
 	//"c:/Users/PLUSZYNSKI/.jenkins/plugins/workflow-cps-global-lib/WEB-INF/lib/workflow-cps-global-lib.jar",
-	"c:/Users/PLUSZYNSKI/.jenkins/jobs/pipeline_test_libs/workspace@libs/test-lib/src",//groovyclasspath
+//	"c:/Users/PLUSZYNSKI/.jenkins/jobs/pipeline_test_libs/workspace@libs/test-lib/src",//groovyclasspath
 	null, // propertykey
 	null,//"VALUE, B", //default value
 	null,

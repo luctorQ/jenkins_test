@@ -72,8 +72,8 @@ com.cwctravel.hudson.plugins.extended_choice_parameter.ExtendedChoiceParameterDe
 	"PT_JSON",//type
 	null,//value
 	null,//project name
+	null,//property file
 	groovyscript,//groovy script
-	null,
 	null,
 	null,// bindings
 	null,

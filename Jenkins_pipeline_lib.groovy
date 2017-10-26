@@ -1,9 +1,12 @@
 @Library('test-lib') _
 import com.hastingsdirect.ExtendedProperties
 
-
 ExtendedProperties ep=new ExtendedProperties()
 
+
+def cl=getClass().getClassLoader();
+String[] classpath = cl.getClasspath().split(":");
+print 'classpath:'+classpath;
 
 //library(identifier:'./shared_lib') _
 

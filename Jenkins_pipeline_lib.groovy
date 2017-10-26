@@ -37,8 +37,7 @@ import org.boon.Boon;
 //import org.jenkinsci.plugins.workflow.libs.Library
 
 //@Library('test-lib') _
-//import com.hastingsdirect.ExtendedProperties;
-println "pwd:"+pwd()
+import com.hastingsdirect.ExtendedProperties;
 
 def jsonEditorOptions = Boon.fromJson(/{
 	   disable_edit_json: true,
@@ -89,7 +88,7 @@ com.cwctravel.hudson.plugins.extended_choice_parameter.ExtendedChoiceParameterDe
 	null,//project name
 	null,//property file
 	groovyscript,//groovy script
-	"c:/Users/PLUSZYNSKI/.jenkins/plugins/workflow-cps-global-lib/WEB-INF/lib/workflow-cps-global-lib.jar",//groovyclasspath
+	"c:/Users/PLUSZYNSKI/.jenkins/jobs/pipeline_test_libs/workspace@libs/test-lib/src",//groovyclasspath
 	null,// bindings
 	null,
 	null, // propertykey

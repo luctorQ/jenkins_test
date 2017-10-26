@@ -2,21 +2,6 @@
 @Library('test-lib') _
 import com.hastingsdirect.sql.*
 import com.hastingsdirect.ep.ExtendedProperties
-CMDBConnection cmdb;
-
-/*def ggg=Class.forName("org.h2.Driver")
-println 'gggg:'+ggg
-*/
-
-def cc=groovy.sql.Sql.newInstance('jdbc:h2:tcp://192.168.56.1:9092/~/teste','sa','sa','org.h2.Driver')
-println 'sssql:'+cc
-
-cc.close()
-
-
-def cllls=CMDBConnection.clazzzz()
-println 'clazz:'+cllls
-//sql.close()
 
 def sql=CMDBConnection.createConnection()
 println 'cmdbconnection:'+sql

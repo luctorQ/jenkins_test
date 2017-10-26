@@ -38,7 +38,7 @@ List props = []
 def groovyscript="""
 import org.boon.Boon;
 
-//import com.hastingsdirect.ExtendedProperties;
+import com.hastingsdirect.ExtendedProperties;
 
 def jsonEditorOptions = Boon.fromJson(/{
 	   disable_edit_json: true,

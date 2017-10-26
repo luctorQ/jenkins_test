@@ -1,7 +1,4 @@
 
-@GrabConfig(systemClassLoader=true)
-@Grab(group = 'com.h2database', module = 'h2', version = '1.4.192')
-
 @Library('test-lib') _
 import com.hastingsdirect.sql.*
 import com.hastingsdirect.ep.ExtendedProperties

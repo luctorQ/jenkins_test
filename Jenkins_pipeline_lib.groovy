@@ -88,9 +88,9 @@ com.cwctravel.hudson.plugins.extended_choice_parameter.ExtendedChoiceParameterDe
 	null,//project name
 	null,//property file
 	groovyscript,//groovy script
-	"c:/Users/PLUSZYNSKI/.jenkins/jobs/pipeline_test_libs/workspace@libs/test-lib/src",//groovyclasspath
-	null,// bindings
 	null,
+	null,// bindings
+	"c:/Users/PLUSZYNSKI/.jenkins/jobs/pipeline_test_libs/workspace@libs/test-lib/src",//groovyclasspath
 	null, // propertykey
 	null,//"VALUE, B", //default value
 	null,

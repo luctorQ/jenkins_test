@@ -1,9 +1,9 @@
 @Library('test-lib') _
 
 
-/*@Library('test-lib')
+@Library('test-lib')
 import com.hastingsdirect.ExtendedProperties
-
+/*
 
 ExtendedProperties ep=new ExtendedProperties()
 *///library(identifier:'./shared_lib') _

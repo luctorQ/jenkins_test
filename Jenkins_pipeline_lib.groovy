@@ -1,5 +1,8 @@
 @Library('test-lib') _
+import com.hastingsdirect.sql.*
 import com.hastingsdirect.ep.ExtendedProperties
+CMDBConnection aa;
+
 
 ExtendedProperties ep=new ExtendedProperties()
 

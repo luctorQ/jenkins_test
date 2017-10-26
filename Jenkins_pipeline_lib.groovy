@@ -1,9 +1,9 @@
 @Library('test-lib') _
 import com.hastingsdirect.ExtendedProperties
-/*
+
 
 ExtendedProperties ep=new ExtendedProperties()
-*///library(identifier:'./shared_lib') _
+//library(identifier:'./shared_lib') _
 
 println 'env:'+env
 

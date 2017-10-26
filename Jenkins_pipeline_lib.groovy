@@ -41,6 +41,8 @@ import org.boon.Boon;
 import com.hastingsdirect.ExtendedProperties
 
 ExtendedProperties ep=new ExtendedProperties()
+def a=ep.test()
+println 'aaaaaa:'+a
 
 def jsonEditorOptions = Boon.fromJson(/{
 	   disable_edit_json: true,

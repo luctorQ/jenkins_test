@@ -64,6 +64,7 @@ def jsonEditorOptions = Boon.fromJson(/{
 		   "full_name" : "John Doe"
 	   }
 }/);
+return jsonEditorOptions
 """
 
 com.cwctravel.hudson.plugins.extended_choice_parameter.ExtendedChoiceParameterDefinition test = new com.cwctravel.hudson.plugins.extended_choice_parameter.ExtendedChoiceParameterDefinition(

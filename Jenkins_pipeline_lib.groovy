@@ -3,8 +3,8 @@ import com.hastingsdirect.ExtendedProperties
 
 ExtendedProperties ep=new ExtendedProperties()
 
-
-println 'pwddd:'+pwd()
+String currentDir = new File(".").getAbsolutePath()
+println 'pwddd:'+currentDir;
 
 /*def cl=getClass().getClassLoader();
 String[] classpath = cl.getClasspath().split(":");

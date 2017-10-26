@@ -37,11 +37,6 @@ import org.jenkinsci.plugins.workflow.libs.Library
 @Library('test-lib') _
 //import com.hastingsdirect.ExtendedProperties;
 
-library(identifier: 'test-lib@master', retriever: modernSCM(
-[\$class: 'GitSCMSource',
-	remote: 'https://github.com/luctorQ/jenkins_shared_lib.git',
-	credentialsId: '8f8ed4c0-b044-44f2-8029-66964ab226d2']))
-
 def jsonEditorOptions = Boon.fromJson(/{
 	   disable_edit_json: true,
 	   disable_properties: true,

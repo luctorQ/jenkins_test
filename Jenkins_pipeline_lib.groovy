@@ -49,8 +49,8 @@ List props = []
 def groovyscript="""
 import org.boon.Boon;
 
-import com.hastingsdirect.ep.ExtendedProperties
-import com.hastingsdirect.sql.CMDBConnection
+import com.hastingsdirect.ep.ExtendedProperties;
+import com.hastingsdirect.sql.CMDBConnection;
 
 def c=CMDBConnection.createConnection()
 c.close()

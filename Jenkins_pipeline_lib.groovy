@@ -91,7 +91,7 @@ com.cwctravel.hudson.plugins.extended_choice_parameter.ExtendedChoiceParameterDe
 	groovyscript,//groovy script
 	null,
 	null,// bindings
-	null,
+	"C:/Users/PLUSZYNSKI/git/jenkins_shared_lib/src",//groovyclasspath
 	//"c:/Users/PLUSZYNSKI/.jenkins/plugins/workflow-cps-global-lib/WEB-INF/lib/workflow-cps-global-lib.jar",
 //	"c:/Users/PLUSZYNSKI/.jenkins/jobs/pipeline_test_libs/workspace@libs/test-lib/src",//groovyclasspath
 	null, // propertykey

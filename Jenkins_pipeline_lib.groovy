@@ -19,6 +19,7 @@ println 'clazz:'+cllls
 //sql.close()
 
 def sql=CMDBConnection.createConnection()
+println 'cmdbconnection:'+sql
 sql.close()
 
 ExtendedProperties ep=new ExtendedProperties()

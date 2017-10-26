@@ -4,6 +4,8 @@ import com.hastingsdirect.ep.ExtendedProperties
 CMDBConnection cmdb;
 
 
+def sql=CMDBConnection.createConnection()
+
 ExtendedProperties ep=new ExtendedProperties()
 
 String currentDir = new File(".").getAbsolutePath()

@@ -41,11 +41,11 @@ def jsonEditorOptions = Boon.fromJson(/{
 		 "properties": {
 		   "first_name": {
 			 "type": "string",
-			 "propertyOrder" : 1
+			 "propertyOrder" : 2
 		   },
 		   "last_name": {
 			 "type": "string",
-			 "propertyOrder" : 2
+			 "propertyOrder" : 1
 		   },
 		   "full_name": {
 			 "type": "string",

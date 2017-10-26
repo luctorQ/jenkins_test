@@ -4,9 +4,11 @@ import com.hastingsdirect.sql.*
 import com.hastingsdirect.ep.ExtendedProperties
 CMDBConnection cmdb;
 
-Class.forName("org.h2.Driver")
+def ggg=Class.forName("org.h2.Driver")
+println 'gggg:'+ggg
 
-def sql=CMDBConnection.createConnection()
+def sql=CMDBConnection.clazzzz()
+println 'clazz:'+sql
 //sql.close()
 
 ExtendedProperties ep=new ExtendedProperties()

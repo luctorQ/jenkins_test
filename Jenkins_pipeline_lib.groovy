@@ -3,7 +3,6 @@
 import com.hastingsdirect.sql.*
 import com.hastingsdirect.vo.*
 import com.hastingsdirect.ep.*
-import com.hastingsdirect.pipeline.history.HistoryContext
 
 def ext=new PromotedBuildsExt("JPARAM")
 println 'groovy script:'+ext.groovyScript()

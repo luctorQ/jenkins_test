@@ -2,7 +2,7 @@
 @Library('test-lib') _
 import com.hastingsdirect.sql.*
 import com.hastingsdirect.vo.*
-import com.hastingsdirect.ep.ExtendedProperties
+import com.hastingsdirect.ep.ExtendedProperty
 
 import org.boon.json.JsonFactory;
 RepositoryBuilds rb=new RepositoryBuilds()
@@ -15,18 +15,6 @@ rbres.each{
 }
 
 println 'json:'+JsonFactory.toJson(rbres)
-
-
-ExtendedProperties ep=new ExtendedProperties()
-
-String currentDir = new File(".").getAbsolutePath()
-println 'pwddd:'+currentDir;
-
-/*def cl=getClass().getClassLoader();
-String[] classpath = cl.getClasspath().split(":");
-print 'classpath:'+classpath;
-*/
-//library(identifier:'./shared_lib') _
 
 println 'env:'+env
 println 'env.WORKSPACE:'+env.WORKSPACE
@@ -55,7 +43,7 @@ def groovyscript="""
 
 import org.boon.Boon;
 import org.boon.json.JsonFactory;
-import com.hastingsdirect.ep.ExtendedProperties;
+import com.hastingsdirect.ep.ExtendedProperty;
 import com.hastingsdirect.sql.RepositoryBuilds;
 
 def repo=new RepositoryBuilds()

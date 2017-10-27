@@ -19,7 +19,9 @@ rbres.each{
 
 
 acme.name="Jane"
-acme.caution 'angry'
+//acme.caution 'angry'
+
+println 'acme:'+acme
 
 println 'env:'+env
 println 'env.WORKSPACE:'+env.WORKSPACE

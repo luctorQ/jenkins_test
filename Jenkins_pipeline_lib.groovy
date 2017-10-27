@@ -17,6 +17,10 @@ rbres.each{
 	println 'tss:'+new PromotedBuild(it).ret()
 }
 
+
+acme.name="Jane"
+acme.caution 'angry'
+
 println 'env:'+env
 println 'env.WORKSPACE:'+env.WORKSPACE
 
@@ -24,17 +28,19 @@ println 'params:'+params
 
 println 'thia:'+this
 /*
-library(identifier: 'test-lib@master', retriever: modernSCM(
-[$class: 'GitSCMSource',
-	remote: 'https://github.com/luctorQ/jenkins_shared_lib.git',
-	credentialsId: '8f8ed4c0-b044-44f2-8029-66964ab226d2']))*/
+ library(identifier: 'test-lib@master', retriever: modernSCM(
+ [$class: 'GitSCMSource',
+ remote: 'https://github.com/luctorQ/jenkins_shared_lib.git',
+ credentialsId: '8f8ed4c0-b044-44f2-8029-66964ab226d2']))*/
 
-properties([parameters([
-				string(name: 'BRANCH', defaultValue: 'master'),
-				string(name: 'BRANCH_1', defaultValue: 'master'),
-//				extendedChoiceParam(name:'JSON_PARAM',groovyScript:groovyscript,description:'Descr'),
-				extendedChoiceParam(new PromotedBuildsExt("TEST_PARAM",'Promoted builds'))
-			])])
+properties([
+	parameters([
+		string(name: 'BRANCH', defaultValue: 'master'),
+		string(name: 'BRANCH_1', defaultValue: 'master'),
+		//				extendedChoiceParam(name:'JSON_PARAM',groovyScript:groovyscript,description:'Descr'),
+		extendedChoiceParam(new PromotedBuildsExt("TEST_PARAM",'Promoted builds'))
+	])
+])
 
 def paramval=PromotedBuildsExt.getValue(params.TEST_PARAM)
 println 'paramval:'+paramval
@@ -49,8 +55,6 @@ pipeline {
 	stages {
 		stage("Initialize"){
 			steps{
-//				acme.name="Jane"
-				acme.caution 'angry'
 				script{
 
 					def u=load 'lib/Utils.groovy'
@@ -83,9 +87,7 @@ pipeline {
 			}
 		}
 		stage('Show quote') {
-			steps {
-				showQuote()
-				//				showSharedQuote()
+			steps { showQuote() //				showSharedQuote()
 			}
 		}
 	}

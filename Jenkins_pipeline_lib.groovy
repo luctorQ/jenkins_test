@@ -123,6 +123,8 @@ def jsonEditorOptions = Boon.fromJson(/{
 return jsonEditorOptions
 """
 
+com.cwctravel.hudson.plugins.extended_choice_parameter.ExtendedChoiceParameterDefinition test1=ExtendedProperties.createJsonField('JSPARAM',groovyscript,'NEWPARAM')
+
 com.cwctravel.hudson.plugins.extended_choice_parameter.ExtendedChoiceParameterDefinition test = new com.cwctravel.hudson.plugins.extended_choice_parameter.ExtendedChoiceParameterDefinition(
 	"JSONPARAM", //name
 	"PT_JSON",//type
@@ -159,7 +161,7 @@ com.cwctravel.hudson.plugins.extended_choice_parameter.ExtendedChoiceParameterDe
 	","
 )
 
-params1 << test
+params1 << test1
 //props << parameters(params)
 
 println 'paramsddddd:'+params1

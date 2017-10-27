@@ -17,11 +17,18 @@ rbres.each{
 	println 'tss:'+new PromotedBuild(it).ret()
 }
 
+acme.addEvent('hej')
+acme.addEvent('ho')
+println 'acme history:'+acme.history
+
 
 acme.name="Jane"
 //acme.caution 'angry'
 
+
 println 'acme:'+acme
+
+
 
 println 'env:'+env
 println 'env.WORKSPACE:'+env.WORKSPACE

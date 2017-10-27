@@ -3,14 +3,8 @@
 import com.hastingsdirect.sql.*
 import com.hastingsdirect.ep.ExtendedProperties
 
-def cn=new CMDBConnection()
-println 'connection:'+cn
-
-
-def sql=CMDBConnection.createConnection()
-println 'cmdbconnection:'+sql
-sql.close()
-sql=null
+def rb=RepositoryBuilds.buildsOnePromoted()
+println ('repo builds:'+rb)
 
 ExtendedProperties ep=new ExtendedProperties()
 

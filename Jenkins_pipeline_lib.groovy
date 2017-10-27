@@ -10,7 +10,7 @@ List<PromotedBuild> rbres=rb.buildsOnePromoted()
 println 'repo builds:'+rbres
 
 rbres.each{
-	println 'tss:'+it.ret()
+	println 'tss:'+new PromotedBuild(it).ret()
 }
 
 ExtendedProperties ep=new ExtendedProperties()

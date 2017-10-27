@@ -37,7 +37,7 @@ properties([parameters([
 			])])
 
 def paramval=new PromotedBuildsExt(params.TEST_PARAM)
-println 'paramval:'+paramval.value
+println 'paramval:'+paramval.getValue()
 
 pipeline {
 	agent any

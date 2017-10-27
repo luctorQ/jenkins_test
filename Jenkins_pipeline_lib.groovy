@@ -90,6 +90,7 @@ pipeline {
 		}
 		stage('Show quote') {
 			steps { 
+				events.add("end of pipeline")
 				echo 'HIST:'+events.list
 			}
 		}

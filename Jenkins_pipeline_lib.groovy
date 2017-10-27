@@ -136,7 +136,6 @@ pipeline {
 		booleanParam(defaultValue: true, description: '', name: 'userFlag')
 		booleanParam(defaultValue: true, description: '', name: 'userFlag11')
 		booleanParam(defaultValue: true, description: '', name: 'userFlag_2')
-		jsonParam(name:'NPARAM',groovyScript:groovyscript,description:'Descr')
 	}
 	stages {
 		stage("Initialize"){

@@ -17,9 +17,9 @@ rbres.each{
 	println 'tss:'+new PromotedBuild(it).ret()
 }
 
-pipelineHistory.addEvent('run this pipeline')
+events.add('run this pipeline')
 
-println 'acme history:'+pipelineHistory.list
+println 'acme history:'+events.list
 
 println 'env:'+env
 println 'env.WORKSPACE:'+env.WORKSPACE
@@ -45,7 +45,7 @@ properties([
 def paramval=PromotedBuildsExt.getValue(params.TEST_PARAM)
 println 'paramval:'+paramval
 
-pipelineHistory.addEvent("parameter set:${paramval}")
+events.add("parameter set:${paramval}")
 
 pipeline {
 	agent any
@@ -58,7 +58,7 @@ pipeline {
 		stage("Initialize"){
 			steps{
 				script{
-					pipelineHistory.addEvent('initialize go')
+					events.add('initialize go')
 					def u=load 'lib/Utils.groovy'
 					u.initialize('Pawel','L')
 					u.lastname='Kowalski'
@@ -90,7 +90,7 @@ pipeline {
 		}
 		stage('Show quote') {
 			steps { 
-				echo 'HIST:'+pipelineHistory.list
+				echo 'HIST:'+events.list
 			}
 		}
 	}

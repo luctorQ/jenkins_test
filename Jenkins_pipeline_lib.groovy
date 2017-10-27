@@ -123,7 +123,7 @@ def jsonEditorOptions = Boon.fromJson(/{
 return jsonEditorOptions
 """
 
-def jsonParam=ExtendedProperties.createJsonField('JSPARAM',groovyscript,'NEWPARAM')
+def jsonParam1=ExtendedProperties.createJsonField('JSPARAM',groovyscript,'NEWPARAM')
 
 params1 << jsonParam
 
@@ -133,7 +133,8 @@ println 'paramsddddd:'+params1
 properties([parameters([
 				string(name: 'BRANCH', defaultValue: 'master'),
 				string(name: 'BRANCH_1', defaultValue: 'master'),
-				jsonParam
+				jsonParam1,
+				jsonParam(name:'Hello',groovyScript:groovyscript,description:'Descr')
 			])])
 
 //properties([parameters(params1)])

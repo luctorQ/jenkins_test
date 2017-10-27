@@ -17,9 +17,9 @@ rbres.each{
 	println 'tss:'+new PromotedBuild(it).ret()
 }
 
-History.addEvent('run this pipeline')
+pipelineHistory.addEvent('run this pipeline')
 
-println 'acme history:'+History.history
+println 'acme history:'+pipelineHistory.history
 
 println 'env:'+env
 println 'env.WORKSPACE:'+env.WORKSPACE
@@ -56,7 +56,7 @@ pipeline {
 		stage("Initialize"){
 			steps{
 				script{
-					History.addEvent('initialize go')
+//					History.addEvent('initialize go')
 					def u=load 'lib/Utils.groovy'
 					u.initialize('Pawel','L')
 					u.lastname='Kowalski'
@@ -88,7 +88,7 @@ pipeline {
 		}
 		stage('Show quote') {
 			steps { 
-				echo 'HIST:'+History.history
+				echo 'HIST:'+pipelineHistory.history
 			}
 		}
 	}

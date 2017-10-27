@@ -6,6 +6,7 @@ import com.hastingsdirect.ep.*
 
 def ext=new PromotedBuildsExt()
 println 'groovy script:'+ext.groovyScript()
+println 'groovy text:'+ext.groovyScript().scriptText
 
 
 import org.boon.json.JsonFactory;

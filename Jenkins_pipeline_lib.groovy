@@ -5,7 +5,8 @@ import com.hastingsdirect.vo.*
 import com.hastingsdirect.ep.*
 import com.hastingsdirect.pipeline.history.HistoryContext
 
-def hc=new HistoryContext()
+hc=new HistoryContext()
+println 'historyContext:'+hc
 
 
 def ext=new PromotedBuildsExt("JPARAM")

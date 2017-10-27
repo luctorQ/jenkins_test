@@ -19,7 +19,7 @@ rbres.each{
 
 pipelineHistory.addEvent('run this pipeline')
 
-println 'acme history:'+pipelineHistory.history
+println 'acme history:'+pipelineHistory.list
 
 println 'env:'+env
 println 'env.WORKSPACE:'+env.WORKSPACE
@@ -44,6 +44,8 @@ properties([
 
 def paramval=PromotedBuildsExt.getValue(params.TEST_PARAM)
 println 'paramval:'+paramval
+
+pipelineHistory.addEvent("parameter set:${paramval}")
 
 pipeline {
 	agent any
@@ -88,7 +90,7 @@ pipeline {
 		}
 		stage('Show quote') {
 			steps { 
-				echo 'HIST:'+pipelineHistory.history
+				echo 'HIST:'+pipelineHistory.list
 			}
 		}
 	}

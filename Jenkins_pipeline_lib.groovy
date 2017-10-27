@@ -53,7 +53,7 @@ import com.hastingsdirect.ep.ExtendedProperties;
 import com.hastingsdirect.sql.RepositoryBuilds;
 
 def repo=new RepositoryBuilds()
-def bop =repo.buildOnePromoted()
+def bop =repo.buildsOnePromoted()
 
 ExtendedProperties ep=new ExtendedProperties()
 def a=ep.test()

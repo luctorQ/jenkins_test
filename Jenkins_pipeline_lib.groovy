@@ -54,6 +54,7 @@ List props = []
 def groovyscript="""
 
 import org.boon.Boon;
+import org.boon.json.JsonFactory;
 import com.hastingsdirect.ep.ExtendedProperties;
 import com.hastingsdirect.sql.RepositoryBuilds;
 
@@ -92,7 +93,7 @@ def jsonEditorOptions = Boon.fromJson(/{
       }
     }
 },
-	   startval: ${Boon.toJson(builds)}
+	   startval: \${JsonFactory.toJson(builds)}
 }/);
 return jsonEditorOptions
 """

@@ -3,6 +3,10 @@
 import com.hastingsdirect.sql.*
 import com.hastingsdirect.vo.*
 import com.hastingsdirect.ep.*
+import com.hastingsdirect.pipeline.history.HistoryContext
+
+def hc=new HistoryContext()
+
 
 def ext=new PromotedBuildsExt("JPARAM")
 println 'groovy script:'+ext.groovyScript()
@@ -49,7 +53,7 @@ pipeline {
 	stages {
 		stage("Initialize"){
 			steps{
-				addHistoryEvent('pipeline started')
+//				addHistoryEvent('pipeline started')
 				script{
 
 					def u=load 'lib/Utils.groovy'

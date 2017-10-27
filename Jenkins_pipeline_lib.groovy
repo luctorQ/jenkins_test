@@ -50,12 +50,10 @@ def groovyscript="""
 
 import org.boon.Boon;
 import com.hastingsdirect.ep.ExtendedProperties;
-import com.hastingsdirect.sql.CMDBConnection;
+import com.hastingsdirect.sql.RepositoryBuilds;
 
-def conn=CMDBConnection.createConnection()
-def bop =conn.buildOnePromoted()
-conn.close()
-conn=null
+def repo=new RepositoryBuilds()
+def bop =repo.buildOnePromoted()
 
 ExtendedProperties ep=new ExtendedProperties()
 def a=ep.test()

@@ -1,11 +1,12 @@
 
 @Library('test-lib') _
 import com.hastingsdirect.sql.*
+import com.hastingsdirect.vo.*
 import com.hastingsdirect.ep.ExtendedProperties
 
 RepositoryBuilds rb=new RepositoryBuilds()
 
-def rbres=rb.buildsOnePromoted()
+def List<PromotedBuild>=rb.buildsOnePromoted()
 println 'repo builds:'+rbres
 
 ExtendedProperties ep=new ExtendedProperties()

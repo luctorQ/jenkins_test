@@ -12,8 +12,9 @@ println 'repo builds:'+rbres
 
 rbres.each{
 	println 'tss:'+new PromotedBuild(it).ret()
-	println 'json:'+JsonFactory.toJson(it)
 }
+
+println 'json:'+JsonFactory.toJson(rbres)
 
 
 ExtendedProperties ep=new ExtendedProperties()

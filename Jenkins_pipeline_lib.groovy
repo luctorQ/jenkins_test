@@ -4,6 +4,7 @@ import com.hastingsdirect.sql.*
 import com.hastingsdirect.vo.*
 import com.hastingsdirect.ep.ExtendedProperties
 
+import org.boon.json.JsonFactory;
 RepositoryBuilds rb=new RepositoryBuilds()
 
 List<PromotedBuild> rbres=rb.buildsOnePromoted()
@@ -11,7 +12,9 @@ println 'repo builds:'+rbres
 
 rbres.each{
 	println 'tss:'+new PromotedBuild(it).ret()
+	println 'json:'+JsonFactory.toJson(it)
 }
+
 
 ExtendedProperties ep=new ExtendedProperties()
 

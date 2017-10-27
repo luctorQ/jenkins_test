@@ -3,8 +3,10 @@
 import com.hastingsdirect.sql.*
 import com.hastingsdirect.ep.ExtendedProperties
 
-def rb=RepositoryBuilds.buildsOnePromoted()
-println ('repo builds:'+rb)
+RepositoryBuilds rb=new RepositoryBuilds()
+
+def rbres=rb.buildsOnePromoted()
+println 'repo builds:'+rbres
 
 ExtendedProperties ep=new ExtendedProperties()
 

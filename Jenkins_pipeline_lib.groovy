@@ -107,13 +107,13 @@ def jsonEditorOptions = Boon.fromJson(/{
           "title":"pc rev",
           "type": "number",
 		  "readOnly":true,
-		  "propertyOrder":4
+		  "propertyOrder":5
         },
 		"ccsvnrevisionnumber": {
           "title":"pc rev",
           "type": "number",
 		  "readOnly":true,
-		  "propertyOrder":4
+		  "propertyOrder":6
         }
       }
     }

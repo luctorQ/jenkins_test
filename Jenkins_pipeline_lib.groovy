@@ -4,6 +4,10 @@ import com.hastingsdirect.sql.*
 import com.hastingsdirect.vo.*
 import com.hastingsdirect.ep.ExtendedProperty
 
+def ext=new PromotedBuildsExt()
+println 'groovy script:'+ext.groovyScript()
+
+
 import org.boon.json.JsonFactory;
 RepositoryBuilds rb=new RepositoryBuilds()
 

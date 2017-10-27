@@ -6,7 +6,7 @@ import com.hastingsdirect.ep.ExtendedProperties
 
 RepositoryBuilds rb=new RepositoryBuilds()
 
-def List<PromotedBuild>=rb.buildsOnePromoted()
+List<PromotedBuild> rbres=rb.buildsOnePromoted()
 println 'repo builds:'+rbres
 
 ExtendedProperties ep=new ExtendedProperties()

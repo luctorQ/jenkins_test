@@ -49,6 +49,7 @@ pipeline {
 	stages {
 		stage("Initialize"){
 			steps{
+				addHistoryEvent('pipeline started')
 				script{
 
 					def u=load 'lib/Utils.groovy'

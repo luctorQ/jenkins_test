@@ -2,7 +2,7 @@
 @Library('test-lib') _
 import com.hastingsdirect.sql.*
 import com.hastingsdirect.vo.*
-import com.hastingsdirect.ep.ExtendedProperty
+import com.hastingsdirect.ep.*
 
 def ext=new PromotedBuildsExt()
 println 'groovy script:'+ext.groovyScript()

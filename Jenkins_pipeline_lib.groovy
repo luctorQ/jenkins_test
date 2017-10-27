@@ -53,6 +53,7 @@ import com.hastingsdirect.ep.ExtendedProperties;
 import com.hastingsdirect.sql.CMDBConnection;
 
 def conn=CMDBConnection.createConnection()
+def bop =conn.buildOnePromoted()
 conn.close()
 conn=null
 

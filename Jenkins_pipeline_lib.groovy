@@ -49,7 +49,9 @@ pipeline {
 	stages {
 		stage("Initialize"){
 			steps{
-				HistoryContext.addEvent('pipeline started')
+				script{
+					HistoryContext.addEvent('pipeline started')
+				}
 				script{
 
 					def u=load 'lib/Utils.groovy'

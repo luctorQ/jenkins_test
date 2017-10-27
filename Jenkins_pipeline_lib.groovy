@@ -36,6 +36,8 @@ properties([parameters([
 				extendedChoiceParam(new PromotedBuildsExt("TEST_PARAM",'Promoted builds'))
 			])])
 
+def paramval=new PromotedBuildsExt(params.TEST_PARAM)
+println 'paramval:'+paramval.value
 
 pipeline {
 	agent any

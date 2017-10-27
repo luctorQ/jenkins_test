@@ -119,8 +119,8 @@ return jsonEditorOptions
 properties([parameters([
 				string(name: 'BRANCH', defaultValue: 'master'),
 				string(name: 'BRANCH_1', defaultValue: 'master'),
-				extendedChoiceParam(name:'JSON_PARAM',groovyScript:groovyscript,description:'Descr'),
-				extendedChoiceParam(ext)
+//				extendedChoiceParam(name:'JSON_PARAM',groovyScript:groovyscript,description:'Descr'),
+				extendedChoiceParam(new PromotedBuildsExt("TEST_PARAM"))
 			])])
 
 

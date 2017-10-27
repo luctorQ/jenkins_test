@@ -4,7 +4,7 @@ import com.hastingsdirect.sql.*
 import com.hastingsdirect.vo.*
 import com.hastingsdirect.ep.*
 
-def ext=new PromotedBuildsExt()
+def ext=new PromotedBuildsExt("JPARAM")
 println 'groovy script:'+ext.groovyScript()
 
 import org.boon.json.JsonFactory;
@@ -114,10 +114,13 @@ def jsonEditorOptions = Boon.fromJson(/{
 return jsonEditorOptions
 """
 
+
+
 properties([parameters([
 				string(name: 'BRANCH', defaultValue: 'master'),
 				string(name: 'BRANCH_1', defaultValue: 'master'),
 				extendedChoiceParam(name:'JSON_PARAM',groovyScript:groovyscript,description:'Descr')
+				extendedChoiceParam(ext)
 			])])
 
 

@@ -9,6 +9,10 @@ RepositoryBuilds rb=new RepositoryBuilds()
 List<PromotedBuild> rbres=rb.buildsOnePromoted()
 println 'repo builds:'+rbres
 
+rbres.each{
+	println 'tss:'+it.ret()
+}
+
 ExtendedProperties ep=new ExtendedProperties()
 
 String currentDir = new File(".").getAbsolutePath()

@@ -49,8 +49,10 @@ pipeline {
 	stages {
 		stage("Initialize"){
 			steps{
-				acme.name="Jane"
-				acme.caution 'angry'
+				script{
+					acme.name="Jane"
+					acme.caution 'angry'
+				}
 				script{
 
 					def u=load 'lib/Utils.groovy'

@@ -79,16 +79,25 @@ def jsonEditorOptions = Boon.fromJson(/{
     "items": {
       "type": "object",
       "properties": {
+		"select":{
+		  "title":"Select",
+		  "type":"boolean",
+		  "format":"checkbox",
+		  "propertyOrder":"1"
+		},
         "cijenkinsbuildid": {
           "title":"buildId",
           "readOnly":"true",
-          "type": "number",
-          "propertyOrder": 1
+          "type": "number"
         },
         "absvnrevisionnumber": {
           "title":"ab rev",
+          "type": "number"
+        },
+		"pcsvnrevisionnumber": {
+          "title":"pc rev",
           "type": "number",
-          "propertyOrder": 2
+		  "readOnly":"true"
         }
       }
     }

@@ -58,7 +58,7 @@ pipeline {
 		stage("Initialize"){
 			steps{
 				script{
-//					History.addEvent('initialize go')
+					pipelineHistory.addEvent('initialize go')
 					def u=load 'lib/Utils.groovy'
 					u.initialize('Pawel','L')
 					u.lastname='Kowalski'

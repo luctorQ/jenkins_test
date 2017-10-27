@@ -86,18 +86,22 @@ def jsonEditorOptions = Boon.fromJson(/{
 		  "propertyOrder":"1"
 		},
         "cijenkinsbuildid": {
-          "title":"buildId",
+          "title":"CIBuild",
+          "type": "number",
           "readOnly":"true",
-          "type": "number"
+		  "propertyOrder":"2"
         },
         "absvnrevisionnumber": {
           "title":"ab rev",
-          "type": "number"
+          "type": "number",
+		  "readOnly":"true",
+		  "propertyOrder":"3"
         },
 		"pcsvnrevisionnumber": {
           "title":"pc rev",
           "type": "number",
-		  "readOnly":"true"
+		  "readOnly":"true",
+		  "propertyOrder":"4"
         }
       }
     }

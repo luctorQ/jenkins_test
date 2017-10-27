@@ -4,6 +4,7 @@ import com.hastingsdirect.sql.*
 import com.hastingsdirect.vo.*
 import com.hastingsdirect.ep.*
 import com.hastingsdirect.pipeline.history.HistoryContext
+historyContext=null
 
 hc=new HistoryContext()
 println 'historyContext:'+hc

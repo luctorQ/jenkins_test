@@ -49,9 +49,8 @@ pipeline {
 	stages {
 		stage("Initialize"){
 			steps{
-				script{
-					HistoryContext.addEvent('pipeline started')
-				}
+				acme.name="Jane"
+				acme.caution 'angry'
 				script{
 
 					def u=load 'lib/Utils.groovy'

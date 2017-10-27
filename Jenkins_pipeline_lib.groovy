@@ -54,11 +54,8 @@ import com.hastingsdirect.ep.ExtendedProperties;
 import com.hastingsdirect.sql.RepositoryBuilds;
 
 def repo=new RepositoryBuilds()
-def bop =repo.buildsOnePromoted()
+def builds = repo.buildsOnePromoted()
 
-ExtendedProperties ep=new ExtendedProperties()
-def a=ep.test()
-println 'aaaaaa:'+a
 
 def jsonEditorOptions = Boon.fromJson(/{
 	   disable_edit_json: true,
@@ -71,33 +68,27 @@ def jsonEditorOptions = Boon.fromJson(/{
 	   theme: "bootstrap2",
 	   iconlib:"fontawesome4",
 	   schema: {
-		 "type": "object",
-		 "title": "Name",
-		 "properties": {
-		   "first_name": {
-			 "type": "string",
-			 "propertyOrder" : 2
-		   },
-		   "last_name": {
-			 "type": "string",
-			 "propertyOrder" : 1
-		   },
-		   "full_name": {
-			 "type": "string",
-			 "propertyOrder" : 3,
-			 "template": "{{fname}} {{lname}}",
-			 "watch": {
-			   "fname": "first_name",
-			   "lname": "last_name"
-			 }
-		   }
-		 }
-	   },
-	   startval: {
-		   "first_name" : "John",
-		   "last_name" : "Doe",
-		   "full_name" : "John Doe"
-	   }
+    "title": "Builds",
+    "type": "array",
+    "format":"table",
+    "items": {
+      "type": "object",
+      "properties": {
+        "cijenkinsbuildid": {
+          "title":"buildId",
+          "readOnly":"true",
+          "type": "number",
+          "propertyOrder": 1
+        },
+        "absvnrevisionnumber": {
+          "title":"ab rev",
+          "type": "number",
+          "propertyOrder": 2
+        }
+      }
+    }
+},
+	   startval: ${Boon.toJson(builds)}
 }/);
 return jsonEditorOptions
 """

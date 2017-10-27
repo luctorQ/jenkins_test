@@ -82,7 +82,7 @@ def jsonEditorOptions = Boon.fromJson(/{
 		"select":{
 		  "title":"Select",
 		  "type":"boolean",
-		  "format":"checkbox",
+		  "format":"radio",
 		  "propertyOrder":"1"
 		},
         "cijenkinsbuildid": {

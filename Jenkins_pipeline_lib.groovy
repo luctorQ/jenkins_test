@@ -14,7 +14,7 @@ List<PromotedBuild> rbres=rb.buildsOnePromoted()
 println 'repo builds:'+rbres
 
 rbres.each{
-	println 'tss:'+new EPPromotedBuild(it).ret()
+	println 'tss:'+new PromotedBuild(it).ret()
 }
 
 events.add('run this pipeline')

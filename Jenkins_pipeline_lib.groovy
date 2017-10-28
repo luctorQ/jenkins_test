@@ -4,7 +4,7 @@ import com.hastingsdirect.sql.*
 import com.hastingsdirect.vo.*
 import com.hastingsdirect.ep.*
 
-def ext=new PromotedBuildsExt("JPARAM")
+def ext=new EPPromotedBuilds("JPARAM")
 println 'groovy script:'+ext.groovyScript()
 
 import org.boon.json.JsonFactory;

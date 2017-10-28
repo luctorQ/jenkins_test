@@ -27,9 +27,6 @@ properties([
 	])
 ])
 
-def paramval=EPPromotedBuilds.getValue(params.TEST_PARAM)
-println 'paramval:'+paramval
-
 events.add("parameter set:${paramval}")
 
 pipeline {
@@ -44,6 +41,9 @@ pipeline {
 			steps{
 				script{
 					events.add('initialize go')
+					def paramval=EPPromotedBuilds.getValue(params.TEST_PARAM)
+					println 'paramval:'+paramval
+					
 					def u=load 'lib/Utils.groovy'
 					u.initialize('Pawel','L')
 					u.lastname='Kowalski'

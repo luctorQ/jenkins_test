@@ -4,22 +4,7 @@ import com.hastingsdirect.sql.*
 import com.hastingsdirect.vo.*
 import com.hastingsdirect.ep.*
 
-def ext=new EPPromotedBuilds("JPARAM")
-println 'groovy script:'+ext.groovyScript()
-
-import org.boon.json.JsonFactory;
-RepositoryBuilds rb=new RepositoryBuilds()
-
-List<PromotedBuild> rbres=rb.buildsOnePromoted()
-println 'repo builds:'+rbres
-
-rbres.each{
-	println 'tss:'+new PromotedBuild(it).ret()
-}
-
 events.add('run this pipeline')
-
-println 'acme history:'+events.list
 
 println 'env:'+env
 println 'env.WORKSPACE:'+env.WORKSPACE

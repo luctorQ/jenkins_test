@@ -38,11 +38,11 @@ properties([
 		string(name: 'BRANCH', defaultValue: 'master'),
 		string(name: 'BRANCH_1', defaultValue: 'master'),
 		//				extendedChoiceParam(name:'JSON_PARAM',groovyScript:groovyscript,description:'Descr'),
-		extendedChoiceParam(new PromotedBuildsExt("TEST_PARAM",'Promoted builds'))
+		extendedChoiceParam(new EPPromotedBuilds("TEST_PARAM",'Promoted builds'))
 	])
 ])
 
-def paramval=PromotedBuildsExt.getValue(params.TEST_PARAM)
+def paramval=EPPromotedBuilds.getValue(params.TEST_PARAM)
 println 'paramval:'+paramval
 
 events.add("parameter set:${paramval}")

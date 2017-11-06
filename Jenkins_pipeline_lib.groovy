@@ -24,6 +24,7 @@ properties([
 		string(name: 'BRANCH_1', defaultValue: 'master'),
 //						extendedChoiceParam(name:'JSON_PARAM',groovyScript:groovyscript,description:'Descr'),
 		extendedChoiceParam(new EPPromotedBuilds("TEST_PARAM",'Promoted builds'))
+		extendedChoiceParam(new EPPromotedBuilds("TEST_PARAM2",'Promoted builds'))
 	])
 ])
 

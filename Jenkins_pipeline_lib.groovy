@@ -41,6 +41,7 @@ pipeline {
 					def bb=build job: 'pipeline_test_libs2', propagate: true, wait: true,
 					 parameters: [string(name: 'BRANCH', value: 'blavalue')]
 					println 'build result:'+bb
+					println 'build class:'+bb.getClass()
 					println 'ext build result:'+bb
 					def restored=eventsRestore(bb)
 					println('restored:'+restored)

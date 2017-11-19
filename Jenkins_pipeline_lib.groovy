@@ -37,7 +37,7 @@ pipeline {
 		stage("PreInit"){
 			steps{
 				script{
-					def bb=build job: 'pipeline_test_libs2', wait: false
+					def bb=build job: 'pipeline_test_libs2', propagate: true, wait: true
 					println 'build result:'+bb
 				}
 			}

@@ -42,14 +42,15 @@ pipeline {
 		stage('set variables'){
 			steps{
 				script{
-					println 'history [0]'+events.list[0]
+					eventsStore()
+//					println 'history [0]'+events.list[0]
 
-					println 'history [0] type'+events.list.getClass()
+//					println 'history [0] type'+events.list.getClass()
 					
-					env.EVENTS_HISTORY=events.list
-					println ('env:'+env)
+//					env.EVENTS_HISTORY=events.list
+//					println ('env:'+env)
 					
-					println ('EVENTS_HISTORY type:'+env.EVENTS_HISTORY.getClass())
+//					println ('EVENTS_HISTORY type:'+env.EVENTS_HISTORY.getClass())
 
 				}
 			}

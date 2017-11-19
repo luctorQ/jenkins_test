@@ -24,7 +24,6 @@ properties([
 		string(name: 'BRANCH_1', defaultValue: 'master'),
 		//						extendedChoiceParam(name:'JSON_PARAM',groovyScript:groovyscript,description:'Descr'),
 		extendedChoiceParam(new EPPromotedBuilds("TEST_PARAM",'Promoted builds')),
-		extendedChoiceParam(new EPPromotedBuilds("TEST_PARAM2",'Promoted builds'))
 	])
 ])
 
@@ -33,8 +32,6 @@ pipeline {
 	agent any
 	parameters {
 		booleanParam(defaultValue: true, description: '', name: 'userFlag')
-		booleanParam(defaultValue: true, description: '', name: 'userFlag11')
-		booleanParam(defaultValue: true, description: '', name: 'userFlag_2')
 	}
 	stages {
 		stage("PreInit"){

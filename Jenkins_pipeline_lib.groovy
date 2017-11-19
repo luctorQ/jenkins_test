@@ -50,6 +50,8 @@ pipeline {
 					
 					println 'history of ext build [0]:'+extHistory[0]
 					
+					println 'type fo extHistory:'+extHistory.getClass()
+					
 					
 										
 /*					def rawBuild=bb.rawBuild

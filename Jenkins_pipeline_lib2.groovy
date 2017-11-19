@@ -15,7 +15,7 @@ properties([
 	parameters([
 		string(name: 'BRANCH', defaultValue: 'master'),
 		string(name: 'BRANCH_1', defaultValue: 'master'),
-//						extendedChoiceParam(name:'JSON_PARAM',groovyScript:groovyscript,description:'Descr'),
+		//						extendedChoiceParam(name:'JSON_PARAM',groovyScript:groovyscript,description:'Descr'),
 		extendedChoiceParam(new EPPromotedBuilds("TEST_PARAM",'Promoted builds')),
 		extendedChoiceParam(new EPPromotedBuilds("TEST_PARAM2",'Promoted builds'))
 	])
@@ -29,7 +29,7 @@ pipeline {
 			steps{
 				script{
 					events.add('pipeline 2 ')
-					
+
 				}
 			}
 		}
@@ -42,11 +42,11 @@ pipeline {
 		stage('set variables'){
 			steps{
 				script{
-					println 'history [0]':+events.list[0]
-					
+					println 'history [0]'+events.list[0]
+
 					env.EVENTS_HISTORY=events.list
 					println ('env:'+env)
-					
+
 				}
 			}
 		}

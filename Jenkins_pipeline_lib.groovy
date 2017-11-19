@@ -37,10 +37,11 @@ pipeline {
 		stage("PreInit"){
 			steps{
 				script{
-					def bb=build job: 'pipeline_test_libs2', propagate: true, wait: true
+					def bb=build job: 'pipeline_test_libs2', propagate: true, wait: true,
+					 parameters: [string(name: 'BRANCH', value: 'blavalue')]
 					println 'build result:'+bb
 					println 'ext build result:'+bb
-					def j1EnvVariables = bb.getBuildVariables();
+					def j1EnvVariables = bb.buildVariables;
 					println 'ext env vairalbles:'+j1EnvVariables
 					
 					def rawBuild=bb.rawBuild

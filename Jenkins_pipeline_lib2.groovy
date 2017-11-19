@@ -39,6 +39,13 @@ pipeline {
 				echo 'HIST:'+events.list
 			}
 		}
+		stage('set variables'){
+			steps{
+				script{
+					
+				}
+			}
+		}
 	}
 }
 

@@ -42,6 +42,8 @@ pipeline {
 		stage('set variables'){
 			steps{
 				script{
+					println 'history [0]':+events.list[0]
+					
 					env.EVENTS_HISTORY=events.list
 					println ('env:'+env)
 					

@@ -113,10 +113,11 @@ pipeline {
 				script{ events.add("end of pipeline") }
 				eventsStore(events.list)
 				echo 'HIST:'+events.list
+				script{
+					def r=eventsRestore()
+					echo 'HIST ALL:'+r
+				}
 				
-				def r=eventsRestore()
-				
-				echo 'HIST ALL:'+r
 			}
 		}
 	}

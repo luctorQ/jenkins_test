@@ -46,9 +46,9 @@ pipeline {
 					def rawBuild=bb.rawBuild
 					println 'raw build env:'+rawBuild.getEnvironment()
 					
-					def binding=rawBuild.getBinding()
+					/*def binding=rawBuild.getBinding()
 					println 'binding event:'+binding.events.list
-					
+					*/
 				}
 			}
 

@@ -37,6 +37,12 @@ pipeline {
 		booleanParam(defaultValue: true, description: '', name: 'userFlag_2')
 	}
 	stages {
+		stage("PreInit"){
+			script{
+				def bb=build job: 'pipeline_test_libs2', wait: false
+			}
+			
+		}
 		stage("Initialize"){
 			steps{
 				script{

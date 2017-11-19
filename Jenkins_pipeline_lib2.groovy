@@ -34,7 +34,7 @@ pipeline {
 		}
 		stage('set variables'){
 			steps{
-//				eventsStore(events.list)
+				eventsStore(events.list)
 				script{
 					def ev=eventsRestore()
 					println 'restored events:'+ev

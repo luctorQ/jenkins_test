@@ -22,7 +22,7 @@ properties([
 	parameters([
 		string(name: 'BRANCH', defaultValue: 'master'),
 		string(name: 'BRANCH_1', defaultValue: 'master'),
-//						extendedChoiceParam(name:'JSON_PARAM',groovyScript:groovyscript,description:'Descr'),
+		//						extendedChoiceParam(name:'JSON_PARAM',groovyScript:groovyscript,description:'Descr'),
 		extendedChoiceParam(new EPPromotedBuilds("TEST_PARAM",'Promoted builds')),
 		extendedChoiceParam(new EPPromotedBuilds("TEST_PARAM2",'Promoted builds'))
 	])
@@ -38,10 +38,13 @@ pipeline {
 	}
 	stages {
 		stage("PreInit"){
-			script{
-				def bb=build job: 'pipeline_test_libs2', wait: false
+			steps{
+				script{
+					def bb=build job: 'pipeline_test_libs2', wait: false
+					println 'build result:'+bb
+				}
 			}
-			
+
 		}
 		stage("Initialize"){
 			steps{
@@ -50,7 +53,7 @@ pipeline {
 					def paramval=EPPromotedBuilds.getValue(params.TEST_PARAM)
 					println 'paramval:'+paramval
 					events.add("parameter set:${paramval}")
-					
+
 					def u=load 'lib/Utils.groovy'
 					u.initialize('Pawel','L')
 					u.lastname='Kowalski'

@@ -29,6 +29,7 @@ pipeline {
 			steps {
 				script{ events.add("end of pipeline") }
 				echo 'HIST:'+events.list
+				echo 'ENV:'+env
 			}
 		}
 		stage('set variables'){

@@ -33,7 +33,7 @@ pipeline {
 		}
 		stage('set variables'){
 			steps{
-				eventsStore()
+				eventsStore(events.list)
 				script{
 //					println 'history [0]'+events.list[0]
 

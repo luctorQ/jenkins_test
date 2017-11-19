@@ -37,7 +37,7 @@ pipeline {
 		stage("PreInit"){
 			steps{
 				script{
-					
+					events.add('PreInit event')
 					def bb=build job: 'pipeline_test_libs2', propagate: true, wait: true,
 					 parameters: [string(name: 'BRANCH', value: 'blavalue')]
 					println 'build result:'+bb
@@ -57,6 +57,8 @@ pipeline {
 					
 					println 'type fo extHistory:'+extHistory.getClass()
 					
+					eventsStore(events.list)
+					eventsStore(restored)
 					
 										
 /*					def rawBuild=bb.rawBuild
@@ -109,7 +111,12 @@ pipeline {
 		stage('Show quote') {
 			steps {
 				script{ events.add("end of pipeline") }
+				eventsStore(events.list)
 				echo 'HIST:'+events.list
+				
+				def r=eventsRestore()
+				
+				echo 'HIST ALL:'+r
 			}
 		}
 	}

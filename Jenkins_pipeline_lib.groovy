@@ -45,7 +45,12 @@ pipeline {
 					println 'ext env vairalbles:'+j1EnvVariables
 
 					
-					println 'history of ext build:'+j1EnvVariables.EVENTS_HISTORY
+					def extHistory=j1EnvVariables.EVENTS_HISTORY
+					println 'history of ext build:'+extHistory
+					
+					println 'history of ext build [0]:'+extHistory[0]
+					
+					
 										
 /*					def rawBuild=bb.rawBuild
 					println 'raw build env:'+rawBuild.getEnvironment()

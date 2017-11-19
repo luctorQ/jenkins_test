@@ -37,7 +37,7 @@ pipeline {
 //				eventsStore(events.list)
 				script{
 					def ev=eventsRestore()
-					println ('restored events:',ev)
+					println 'restored events:'+ev
 					
 					//					println 'history [0]'+events.list[0]
 

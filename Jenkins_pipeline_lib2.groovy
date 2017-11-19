@@ -4,6 +4,8 @@ import com.hastingsdirect.sql.*
 import com.hastingsdirect.vo.*
 import com.hastingsdirect.ep.*
 
+
+println 'events !!:'+events
 events.add('run this pipeline')
 
 println 'env:'+env

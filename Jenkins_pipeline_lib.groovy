@@ -42,8 +42,9 @@ pipeline {
 					println 'ext build result:'+bb
 					def j1EnvVariables = bb.getBuildVariables();
 					println 'ext env vairalbles:'+j1EnvVariables
+					
 					def rawBuild=bb.rawBuild()
-					println 'raw build env:'+.rawBuild.getEnvironment()
+					println 'raw build env:'+rawBuild.getEnvironment()
 					
 					def binding=rawBuild.getBinding()
 					println 'binding event:'+binding.events.list

@@ -44,8 +44,12 @@ pipeline {
 				script{
 					println 'history [0]'+events.list[0]
 
+					println 'history [0] type'+events.list.getClass()
+					
 					env.EVENTS_HISTORY=events.list
 					println ('env:'+env)
+					
+					println ('EVENTS_HISTORY type:'+env.EVENTS_HISTORY.getClass())
 
 				}
 			}

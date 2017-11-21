@@ -75,6 +75,9 @@ pipeline {
 		stage("Initialize"){
 			steps{
 				script{
+					eventsStore(msg:'map event store')
+					eventsStore("new event")
+					
 					events.add('initialize go')
 					def paramval=EPPromotedBuilds.getValue(params.TEST_PARAM)
 					println 'paramval:'+paramval

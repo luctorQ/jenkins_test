@@ -38,7 +38,7 @@ pipeline {
 			steps{
 				script{
 					events.add('PreInit event')
-					events.add(type:'HOLA',msg:'HOLLLA')
+					events.add(type:'HOLA',msg:"HOLLLA ${env.WORKSPACE} ")
 					def bb=build job: 'pipeline_test_libs2', propagate: true, wait: true,
 					 parameters: [string(name: 'BRANCH', value: 'blavalue')]
 					println 'build result:'+bb

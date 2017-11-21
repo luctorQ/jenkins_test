@@ -38,7 +38,7 @@ pipeline {
 			steps{
 				script{
 					events.add('PreInit event')
-					eventsStore.add(type:'HOLA',msg:"HOLLLA ${env.WORKSPACE} ")
+					eventsStore(type:'HOLA',msg:"HOLLLA ${env.WORKSPACE} ")
 					
 					throw new Error()
 					

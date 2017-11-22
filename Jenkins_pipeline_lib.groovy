@@ -39,6 +39,8 @@ pipeline {
 				script{
 					events.add('PreInit event')
 					eventsStore(type:'HOLA',msg:"HOLLLA ${env.WORKSPACE} ")
+					def build=getBuild("pipeline_test_libs2",325)
+					println 'BUILD'+build
 					
 					throw new Error()
 					

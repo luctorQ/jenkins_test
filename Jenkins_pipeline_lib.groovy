@@ -41,50 +41,48 @@ pipeline {
 					eventsStore(type:'HOLA',msg:"HOLLLA ${env.WORKSPACE} ")
 					def build=getBuild("pipeline_test_libs2",325)
 					println 'BUILD'+build.getClass()
-					
+
 					def parallel_jobs=[
-						aaa:{
-							return 'aaa'
-						},
-						bbb:{
-							return 'bbb'
-						}
-						]
-					
+						aaa:{ return 'aaa' },
+						bbb:{ return 'bbb' }
+					]
+
 					parallel(parallel_jobs)
-					
-					
+
+
 					throw new Error()
-					
+
 					def bb=build job: 'pipeline_test_libs2', propagate: true, wait: true,
-					 parameters: [string(name: 'BRANCH', value: 'blavalue')]
+					parameters: [
+						string(name: 'BRANCH', value: 'blavalue')
+					]
 					println 'build result:'+bb
 					println 'build class:'+bb.getClass()
 					println 'ext build result:'+bb
 					def restored=eventsRestore(bb)
 					println('restored:'+restored)
-					
+
 					def j1EnvVariables = bb.buildVariables;
 					println 'ext env vairalbles:'+j1EnvVariables
 
-					
+
 					def extHistory=j1EnvVariables.EVENTS_HISTORY
 					println 'history of ext build:'+extHistory
-					
+
 					println 'history of ext build [0]:'+extHistory[0]
-					
+
 					println 'type fo extHistory:'+extHistory.getClass()
-					
+
 					eventsStore(events.list)
 					eventsStore(restored)
-					
-										
-/*					def rawBuild=bb.rawBuild
-					println 'raw build env:'+rawBuild.getEnvironment()
-*/					
+
+
+					/*					def rawBuild=bb.rawBuild
+					 println 'raw build env:'+rawBuild.getEnvironment()
+					 */					
 					/*def binding=rawBuild.getBinding()
-					println 'binding event:'+binding.events.list
-					*/
+					 println 'binding event:'+binding.events.list
+					 */
 				}
 			}
 
@@ -94,7 +92,7 @@ pipeline {
 				script{
 					eventsStore(msg:'map event store',type:'KKKK',ref:params.TEST_PARAM)
 					eventsStore("new event",'NNNN')
-					
+
 					events.add('initialize go')
 					def paramval=EPPromotedBuilds.getValue(params.TEST_PARAM)
 					println 'paramval:'+paramval
@@ -138,7 +136,7 @@ pipeline {
 					def r=eventsRestore()
 					echo 'HIST ALL:'+r
 				}
-				
+
 			}
 		}
 	}

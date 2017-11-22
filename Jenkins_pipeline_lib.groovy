@@ -43,13 +43,16 @@ pipeline {
 					println 'BUILD'+build.getClass()
 
 					def parallel_jobs=[
-						aaa:{ return 'aaa' },
+						aaa:{
+							println 'aaa parallel invoked'
+							return 'aaa'
+						},
 						bbb:{ return 'bbb' }
 					]
 
 					parallel(parallel_jobs)
 
-					
+
 					println "parallel_jobs:"+parallel_jobs
 					println "parallel_jobs aaa:"+parallel_jobs.aaa
 					println "aaa job result:"+parallel_jobs.aaa.result

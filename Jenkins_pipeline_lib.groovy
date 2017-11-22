@@ -49,6 +49,8 @@ pipeline {
 
 					parallel(parallel_jobs)
 
+					
+					println "parallel_jobs:"+parallel_jobs
 
 					throw new Error()
 

@@ -42,6 +42,18 @@ pipeline {
 					def build=getBuild("pipeline_test_libs2",325)
 					println 'BUILD'+build.getClass()
 					
+					def parallel_jobs=[
+						aaa:{
+							return 'aaa'
+						},
+						bbb:{
+							return 'bbb'
+						}
+						]
+					
+					parallel(parallel_jobs)
+					
+					
 					throw new Error()
 					
 					def bb=build job: 'pipeline_test_libs2', propagate: true, wait: true,

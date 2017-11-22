@@ -51,6 +51,7 @@ pipeline {
 
 					
 					println "parallel_jobs:"+parallel_jobs
+					println "parallel_jobs aaa:"+parallel_jobs.aaa
 					println "aaa job result:"+parallel_jobs.aaa.result
 
 					throw new Error()

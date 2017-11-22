@@ -3,6 +3,7 @@
 import com.hastingsdirect.sql.*
 import com.hastingsdirect.vo.*
 import com.hastingsdirect.ep.*
+import com.hastingsdirect.templates.Template
 
 events.add('run this pipeline')
 
@@ -42,20 +43,17 @@ pipeline {
 					def build=getBuild("pipeline_test_libs2",325)
 					println 'BUILD'+build.getClass()
 
-					def parallel_jobs=[
-						aaa:{
-							println 'aaa parallel invoked'
-							return 'aaa'
-						},
-						bbb:{ return 'bbb' }
-					]
+					def template=new Template()
+					def tpl=template.createTemplate()
+					println "tpl:"+tpl
+					/*emailext(
+							to: 'pluszynski@bleak.pl',
+							replyTo: 'pawelluszynski@hastingsdirect.onmicrosoft.com',
+							subject: "CI Build on",
+							attachmentsPattern: 'tmp_out/report*.zip',
+							body: emailBody
+							)*/
 
-					parallel(parallel_jobs)
-
-
-					println "parallel_jobs:"+parallel_jobs
-					println "parallel_jobs aaa:"+parallel_jobs.aaa
-					println "aaa job result:"+parallel_jobs.aaa.result
 
 					throw new Error()
 

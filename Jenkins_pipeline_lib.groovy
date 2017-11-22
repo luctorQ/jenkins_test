@@ -45,13 +45,13 @@ pipeline {
 
 					def tpl=sendEmail()
 					println "tpl:"+tpl
-					/*emailext(
+					emailext(
 							to: 'pluszynski@bleak.pl',
-							replyTo: 'pawelluszynski@hastingsdirect.onmicrosoft.com',
+							replyTo: 'luchtort@gmail.com',
 							subject: "CI Build on",
 							attachmentsPattern: 'tmp_out/report*.zip',
-							body: emailBody
-							)*/
+							body: tpl
+							)
 
 
 					throw new Error()

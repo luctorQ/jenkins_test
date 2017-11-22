@@ -44,7 +44,7 @@ pipeline {
 					println 'BUILD'+build.getClass()
 
 					def template=new Template()
-					def tpl=Template.templateScriptFromCodeSource('test.tpl')
+					def tpl=template.templateScriptFromCodeSource('test.tpl')
 					println "tpl:"+tpl
 					/*emailext(
 							to: 'pluszynski@bleak.pl',

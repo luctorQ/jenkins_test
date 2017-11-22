@@ -43,14 +43,14 @@ pipeline {
 					def build=getBuild("pipeline_test_libs2",325)
 					println 'BUILD'+build.getClass()
 
-					def mytemplate=new Template()
+/*					def mytemplate=new Template()
 					def str=mytemplate.eval('emailtemplate.groovy')
 				
 					println 'after str:'+str	
-				
+*/				
 					
 					
-					def tpl=sendEmail()
+					def tpl=sendEmail("ddd")
 					println "tpl:"+tpl
 					emailext(
 							to: 'pluszynski@bleak.pl',

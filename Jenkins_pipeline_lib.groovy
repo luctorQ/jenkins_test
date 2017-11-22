@@ -43,11 +43,11 @@ pipeline {
 					def build=getBuild("pipeline_test_libs2",325)
 					println 'BUILD'+build.getClass()
 
-					def mytemplate=new Template()
+/*					def mytemplate=new Template('gogo')
 					def str=mytemplate.eval('com/hastingsdirect/templates/emailtemplate.groovy')
 				
 					println 'after str:'+str	
-				
+*/				
 					
 					
 					def tpl=sendEmail("ddd")

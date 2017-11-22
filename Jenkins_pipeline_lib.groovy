@@ -43,8 +43,7 @@ pipeline {
 					def build=getBuild("pipeline_test_libs2",325)
 					println 'BUILD'+build.getClass()
 
-					def template=new Template()
-					def tpl=template.templateScriptFromCodeSource('test2.groovy')
+					def tpl=sendEmail()
 					println "tpl:"+tpl
 					/*emailext(
 							to: 'pluszynski@bleak.pl',

@@ -65,7 +65,10 @@ pipeline {
 								TEST:'ok',
 								APP_BUILD_DONE:HISTORY_EVENTS.findAll({it.type=='APP_BUILD_DONE'}).collect{it.ref}
 							]
+							
+					println 'bindings:'+bindings
 
+							
 					eventsStore('abc')
 /*					sendEmail(
 							template:'templates/email-build-deploy-summary.groovy',

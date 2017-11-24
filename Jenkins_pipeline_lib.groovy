@@ -59,19 +59,20 @@ pipeline {
 	}]
 """
 					def HISTORY_EVENTS=ExtendedProperty.fromJson(HISTORY_EVENTS_JSON)
-					def bindings=[
-						TEST:'ok',
-						APP_BUILD_DONE:HISTORY_EVENTS.findAll({it.type=='APP_BUILD_DONE'}).collect{it.ref}
-					]
-				
+
 
 					sendEmail(
-						template:'templates/email-build-deploy-summary.groovy',
-						subject:'Build Test email',
-						recipients: 'pluszynski@bleak.pl,pawelluszynski@hastingsdirect.onmicrosoft.com',
-						attachments:'tmp_out/report*.zip',
-						bindings:bindings
-					)
+							template:'templates/email-build-deploy-summary.groovy',
+							subject:'Build Test email',
+							recipients: 'pluszynski@bleak.pl,pawelluszynski@hastingsdirect.onmicrosoft.com',
+							attachments:'tmp_out/report*.zip',
+							bindings:[
+								TEST:'ok',
+								APP_BUILD_DONE:HISTORY_EVENTS.findAll({it.type=='APP_BUILD_DONE'}).collect{it.ref}
+							]
+							)
+
+
 
 					/*					emailext(
 					 to: 'pluszynski@bleak.pl,pawelluszynski@hastingsdirect.onmicrosoft.com',

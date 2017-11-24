@@ -40,9 +40,9 @@ pipeline {
 				script{
 					events.add('PreInit event')
 					eventsStore(type:'HOLA',msg:"HOLLLA ${env.WORKSPACE} ")
-					def build=getBuild("pipeline_test_libs2",325)
+/*					def build=getBuild("pipeline_test_libs2",325)
 					println 'BUILD'+build.getClass()
-
+*/
 					/*					def mytemplate=new Template('gogo')
 					 def str=mytemplate.eval('com/hastingsdirect/templates/emailtemplate.groovy')
 					 println 'after str:'+str	
@@ -72,21 +72,8 @@ pipeline {
 							]
 							)
 							
-					HISTORY_EVENTS=null
 
-
-					/*					emailext(
-					 to: 'pluszynski@bleak.pl,pawelluszynski@hastingsdirect.onmicrosoft.com',
-					 replyTo: 'luchtort@gmail.com',
-					 subject: "CI Build on",
-					 attachmentsPattern: 'tmp_out/report*.zip',
-					 body: tpl
-					 )
-					 */
-
-					throw new Error()
-
-					def bb=build job: 'pipeline_test_libs2', propagate: true, wait: true,
+/*					def bb=build job: 'pipeline_test_libs2', propagate: true, wait: true,
 					parameters: [
 						string(name: 'BRANCH', value: 'blavalue')
 					]
@@ -109,7 +96,7 @@ pipeline {
 
 					eventsStore(events.list)
 					eventsStore(restored)
-
+*/
 
 					/*					def rawBuild=bb.rawBuild
 					 println 'raw build env:'+rawBuild.getEnvironment()
@@ -121,7 +108,7 @@ pipeline {
 			}
 
 		}
-		stage("Initialize"){
+/*		stage("Initialize"){
 			steps{
 				script{
 					eventsStore(msg:'map event store',type:'KKKK',ref:params.TEST_PARAM)
@@ -160,16 +147,10 @@ pipeline {
 					//				pu.calculateName()
 				}
 			}
-		}
+		}*/
 		stage('Show quote') {
 			steps {
-				script{ events.add("end of pipeline") }
-				eventsStore(events.list)
-				echo 'HIST:'+events.list
-				script{
-					def r=eventsRestore()
-					echo 'HIST ALL:'+r
-				}
+				echo 'HIST:'+eventsRestore()
 
 			}
 		}

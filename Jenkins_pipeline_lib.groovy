@@ -52,14 +52,14 @@ pipeline {
 					
 					def tpl=sendEmail("ddd")
 					println "tpl:"+tpl
-/*					emailext(
+					emailext(
 							to: 'pluszynski@bleak.pl',
 							replyTo: 'luchtort@gmail.com',
 							subject: "CI Build on",
 							attachmentsPattern: 'tmp_out/report*.zip',
 							body: tpl
 							)
-*/
+
 
 					throw new Error()
 

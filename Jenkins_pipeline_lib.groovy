@@ -43,23 +43,44 @@ pipeline {
 					def build=getBuild("pipeline_test_libs2",325)
 					println 'BUILD'+build.getClass()
 
-/*					def mytemplate=new Template('gogo')
-					def str=mytemplate.eval('com/hastingsdirect/templates/emailtemplate.groovy')
+					/*					def mytemplate=new Template('gogo')
+					 def str=mytemplate.eval('com/hastingsdirect/templates/emailtemplate.groovy')
+					 println 'after str:'+str	
+					 */				
+					def	HISTORY_EVENTS_JSON="""
+[{
+		"date":1511369584479,"msg":"Build 621 of pc completed with result UNSTABLE","ref":{
+			"build":{
+				"appname":"pc","artifactoryurl":"","buildidentifier":"26294","buildresult":"UNSTABLE","created_at":1511349799117,"createdate":1511349799000,"deleted":false,"description":"","id":1870,"important":false,"jenkinsbuildnumber":621,"jenkinsbuildurl":"http://bx-cinappd03.network.uk.ad:8080/job/PC%20Build/621/","storedinartifactory":false,"svnpath":"Hastings/branches/CAD7/PolicyCenter/modules/configuration","svnrevisionnumber":26294,"trunk":false,"updated_at":1511349799117
+			},"junittests":{
+				"failCount":4,"failureDiffString":" / -10","skipCount":0,"testsUrl":"http://bx-cinappd03.network.uk.ad:8080/job/PC%20Build/621//testReport","totalCount":195
+			}
+		},"type":"APP_BUILD_DONE"
+	}]
+"""
+					def HISTORY_EVENTS=ExtendedProperty.fromJson(HISTORY_EVENTS_JSON)
+					def bindings=[
+						TEST:'ok',
+						APP_BUILD_DONE:HISTORY_EVENTS.findAll({it.type=='APP_BUILD_DONE'}).collect{it.ref}
+					]
 				
-					println 'after str:'+str	
-*/				
-					
-					
-					def tpl=sendEmail("ddd")
-					println "tpl:"+tpl
-					emailext(
-							to: 'pluszynski@bleak.pl,pawelluszynski@hastingsdirect.onmicrosoft.com',
-							replyTo: 'luchtort@gmail.com',
-							subject: "CI Build on",
-							attachmentsPattern: 'tmp_out/report*.zip',
-							body: tpl
-							)
 
+					sendEmail([
+						template:'templates/email-build-deploy-summary.groovy',
+						subject:'Build Test email',
+						recipients: 'pluszynski@bleak.pl,pawelluszynski@hastingsdirect.onmicrosoft.com',
+						attachments:'tmp_out/report*.zip',
+						bindings:bindings
+					])
+
+					/*					emailext(
+					 to: 'pluszynski@bleak.pl,pawelluszynski@hastingsdirect.onmicrosoft.com',
+					 replyTo: 'luchtort@gmail.com',
+					 subject: "CI Build on",
+					 attachmentsPattern: 'tmp_out/report*.zip',
+					 body: tpl
+					 )
+					 */
 
 					throw new Error()
 

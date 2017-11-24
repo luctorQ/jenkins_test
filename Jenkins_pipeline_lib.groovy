@@ -72,7 +72,7 @@ pipeline {
 							]
 							)
 							
-
+					HISTORY_EVENTS=null
 
 
 					/*					emailext(

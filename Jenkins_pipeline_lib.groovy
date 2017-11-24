@@ -40,9 +40,9 @@ pipeline {
 				script{
 					events.add('PreInit event')
 					eventsStore(type:'HOLA',msg:"HOLLLA ${env.WORKSPACE} ")
-/*					def build=getBuild("pipeline_test_libs2",325)
-					println 'BUILD'+build.getClass()
-*/
+					/*					def build=getBuild("pipeline_test_libs2",325)
+					 println 'BUILD'+build.getClass()
+					 */
 					/*					def mytemplate=new Template('gogo')
 					 def str=mytemplate.eval('com/hastingsdirect/templates/emailtemplate.groovy')
 					 println 'after str:'+str	
@@ -59,7 +59,7 @@ pipeline {
 	}]
 """
 					def HISTORY_EVENTS=ExtendedProperty.fromJson(HISTORY_EVENTS_JSON)
-					
+
 
 					sendEmail(
 							template:'templates/email-build-deploy-summary.groovy',
@@ -71,32 +71,26 @@ pipeline {
 								APP_BUILD_DONE:HISTORY_EVENTS.findAll({it.type=='APP_BUILD_DONE'}).collect{it.ref}
 							]
 							)
-							
-
-/*					def bb=build job: 'pipeline_test_libs2', propagate: true, wait: true,
-					parameters: [
-						string(name: 'BRANCH', value: 'blavalue')
-					]
-					println 'build result:'+bb
-					println 'build class:'+bb.getClass()
-					println 'ext build result:'+bb
-					def restored=eventsRestore(bb)
-					println('restored:'+restored)
-
-					def j1EnvVariables = bb.buildVariables;
-					println 'ext env vairalbles:'+j1EnvVariables
 
 
-					def extHistory=j1EnvVariables.EVENTS_HISTORY
-					println 'history of ext build:'+extHistory
-
-					println 'history of ext build [0]:'+extHistory[0]
-
-					println 'type fo extHistory:'+extHistory.getClass()
-
-					eventsStore(events.list)
-					eventsStore(restored)
-*/
+					/*					def bb=build job: 'pipeline_test_libs2', propagate: true, wait: true,
+					 parameters: [
+					 string(name: 'BRANCH', value: 'blavalue')
+					 ]
+					 println 'build result:'+bb
+					 println 'build class:'+bb.getClass()
+					 println 'ext build result:'+bb
+					 def restored=eventsRestore(bb)
+					 println('restored:'+restored)
+					 def j1EnvVariables = bb.buildVariables;
+					 println 'ext env vairalbles:'+j1EnvVariables
+					 def extHistory=j1EnvVariables.EVENTS_HISTORY
+					 println 'history of ext build:'+extHistory
+					 println 'history of ext build [0]:'+extHistory[0]
+					 println 'type fo extHistory:'+extHistory.getClass()
+					 eventsStore(events.list)
+					 eventsStore(restored)
+					 */
 
 					/*					def rawBuild=bb.rawBuild
 					 println 'raw build env:'+rawBuild.getEnvironment()
@@ -106,48 +100,7 @@ pipeline {
 					 */
 				}
 			}
-
 		}
-/*		stage("Initialize"){
-			steps{
-				script{
-					eventsStore(msg:'map event store',type:'KKKK',ref:params.TEST_PARAM)
-					eventsStore("new event",'NNNN')
-
-					events.add('initialize go')
-					def paramval=EPPromotedBuilds.getValue(params.TEST_PARAM)
-					println 'paramval:'+paramval
-					events.add("parameter set:${paramval}")
-
-					def u=load 'lib/Utils.groovy'
-					u.initialize('Pawel','L')
-					u.lastname='Kowalski'
-					u.showName()
-
-					u.runU2()
-
-
-					utils=load 'lib/PipelineUtils_1.groovy'
-
-
-					println 'PipelineUtils:'+utils
-					utils.gogo('abracadabra')
-
-					def PipelineUtils2=load 'lib/PipelineUtils_2.groovy'
-					def puInstance=PipelineUtils2.instance()
-					def aa=puInstance.calculateName()
-					println('aaaa:'+aa)
-
-					/*					def clos=load 'lib/ClosurePipeline.groovy'
-					 println 'clos:'+clos
-					 clos(this)
-					 */					
-					//					def pu=utils.PU
-					//					def pu=utils.getProperty('PipelineUtils')
-					//				pu.calculateName()
-				}
-			}
-		}*/
 		stage('Show quote') {
 			steps {
 				echo 'HIST:'+eventsRestore()

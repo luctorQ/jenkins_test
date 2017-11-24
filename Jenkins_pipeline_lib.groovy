@@ -50,16 +50,16 @@ pipeline {
 */				
 					
 					
-					/*def tpl=sendEmail("ddd")
-					println "tpl:"+tpl*/
-					emailext(
+					def tpl=sendEmail("ddd")
+					println "tpl:"+tpl
+/*					emailext(
 							to: 'pluszynski@bleak.pl',
 							replyTo: 'luchtort@gmail.com',
 							subject: "CI Build on",
 							attachmentsPattern: 'tmp_out/report*.zip',
-							body: 'dsdfa'
+							body: tpl
 							)
-
+*/
 
 					throw new Error()
 

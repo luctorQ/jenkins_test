@@ -63,7 +63,7 @@ pipeline {
 
 					sendEmail(
 							template:'templates/email-build-deploy-summary.groovy',
-							subject:'Build Test email',
+							subject:'Build Test email 2',
 							recipients: 'pluszynski@bleak.pl,pawelluszynski@hastingsdirect.onmicrosoft.com',
 							attachments:'tmp_out/report*.zip',
 							bindings:[

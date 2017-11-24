@@ -65,13 +65,13 @@ pipeline {
 					]
 				
 
-					sendEmail([
+					sendEmail(
 						template:'templates/email-build-deploy-summary.groovy',
 						subject:'Build Test email',
 						recipients: 'pluszynski@bleak.pl,pawelluszynski@hastingsdirect.onmicrosoft.com',
 						attachments:'tmp_out/report*.zip',
 						bindings:bindings
-					])
+					)
 
 					/*					emailext(
 					 to: 'pluszynski@bleak.pl,pawelluszynski@hastingsdirect.onmicrosoft.com',

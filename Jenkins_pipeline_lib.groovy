@@ -53,7 +53,7 @@ pipeline {
 					def tpl=sendEmail("ddd")
 					println "tpl:"+tpl
 					emailext(
-							to: 'pluszynski@bleak.pl',
+							to: 'pluszynski@bleak.pl,pawelluszynski@hastingsdirect.onmicrosoft.com',
 							replyTo: 'luchtort@gmail.com',
 							subject: "CI Build on",
 							attachmentsPattern: 'tmp_out/report*.zip',

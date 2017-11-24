@@ -58,8 +58,8 @@ pipeline {
 		},"type":"APP_BUILD_DONE"
 	}]
 """
-					def HISTORY_EVENTS=ExtendedProperty.fromJson(HISTORY_EVENTS_JSON)
-
+//					def HISTORY_EVENTS=ExtendedProperty.fromJson(HISTORY_EVENTS_JSON)
+					def HISTORY_EVENTS=[]
 
 					sendEmail(
 							template:'templates/email-build-deploy-summary.groovy',

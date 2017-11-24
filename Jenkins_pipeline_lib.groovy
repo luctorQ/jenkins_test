@@ -60,6 +60,11 @@ pipeline {
 """
 					def HISTORY_EVENTS=ExtendedProperty.fromJson(HISTORY_EVENTS_JSON)
 					println 'HISTORY_EVENTS:'+HISTORY_EVENTS
+					
+					def bindings=[
+								TEST:'ok',
+								APP_BUILD_DONE:HISTORY_EVENTS.findAll({it.type=='APP_BUILD_DONE'}).collect{it.ref}
+							]
 
 					eventsStore('abc')
 /*					sendEmail(

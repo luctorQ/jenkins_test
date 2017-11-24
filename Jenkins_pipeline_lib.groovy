@@ -60,6 +60,7 @@ pipeline {
 """
 					def HISTORY_EVENTS=ExtendedProperty.fromJson(HISTORY_EVENTS_JSON)
 					println 'HISTORY_EVENTS:'+HISTORY_EVENTS
+					println "HISTORY_EVENTS CLASS:"+HISTORY_EVENTS.getClass()
 					
 					def bindings=[
 								TEST:'ok',

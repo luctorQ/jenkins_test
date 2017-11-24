@@ -61,7 +61,7 @@ pipeline {
 					def HISTORY_EVENTS=ExtendedProperty.fromJson(HISTORY_EVENTS_JSON)
 					println 'HISTORY_EVENTS:'+HISTORY_EVENTS
 
-					sendEmail(
+/*					sendEmail(
 							template:'templates/email-build-deploy-summary.groovy',
 							subject:'Build Test email 2',
 							recipients: 'pluszynski@bleak.pl,pawelluszynski@hastingsdirect.onmicrosoft.com',
@@ -71,7 +71,7 @@ pipeline {
 								APP_BUILD_DONE:HISTORY_EVENTS.findAll({it.type=='APP_BUILD_DONE'}).collect{it.ref}
 							]
 							)
-
+*/
 
 					/*					def bb=build job: 'pipeline_test_libs2', propagate: true, wait: true,
 					 parameters: [

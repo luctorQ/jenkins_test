@@ -67,20 +67,16 @@ pipeline {
 							]
 							
 					println 'bindings:'+bindings
-
 							
 					eventsStore('abc')
-/*					sendEmail(
+					sendEmail(
 							template:'templates/email-build-deploy-summary.groovy',
 							subject:'Build Test email 2',
 							recipients: 'pluszynski@bleak.pl,pawelluszynski@hastingsdirect.onmicrosoft.com',
 							attachments:'tmp_out/report*.zip',
-							bindings:[
-								TEST:'ok',
-								APP_BUILD_DONE:HISTORY_EVENTS.findAll({it.type=='APP_BUILD_DONE'}).collect{it.ref}
-							]
+							bindings:bindings
 							)
-*/
+
 
 					/*					def bb=build job: 'pipeline_test_libs2', propagate: true, wait: true,
 					 parameters: [

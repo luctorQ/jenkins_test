@@ -50,8 +50,8 @@ pipeline {
 */				
 					
 					
-					def tpl=sendEmail("ddd")
-					println "tpl:"+tpl
+					/*def tpl=sendEmail("ddd")
+					println "tpl:"+tpl*/
 					emailext(
 							to: 'pluszynski@bleak.pl',
 							replyTo: 'luchtort@gmail.com',

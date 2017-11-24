@@ -61,6 +61,7 @@ pipeline {
 					def HISTORY_EVENTS=ExtendedProperty.fromJson(HISTORY_EVENTS_JSON)
 					println 'HISTORY_EVENTS:'+HISTORY_EVENTS
 
+					eventsStore('abc')
 /*					sendEmail(
 							template:'templates/email-build-deploy-summary.groovy',
 							subject:'Build Test email 2',

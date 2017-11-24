@@ -57,7 +57,7 @@ pipeline {
 							replyTo: 'luchtort@gmail.com',
 							subject: "CI Build on",
 							attachmentsPattern: 'tmp_out/report*.zip',
-							body: tpl
+							body: 'dsdfa'
 							)
 
 

@@ -58,7 +58,7 @@ pipeline {
 		},"type":"APP_BUILD_DONE"
 	}]
 """
-					def HISTORY_EVENTS=ExtendedProperty.fromJsonList(HISTORY_EVENTS_JSON)
+					def HISTORY_EVENTS=ExtendedProperty.fromJson(HISTORY_EVENTS_JSON)
 					println 'HISTORY_EVENTS:'+HISTORY_EVENTS
 					println "HISTORY_EVENTS CLASS:"+HISTORY_EVENTS.getClass()
 					

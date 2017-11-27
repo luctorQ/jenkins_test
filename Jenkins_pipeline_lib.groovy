@@ -99,7 +99,7 @@ pipeline {
   {
     "date": 1511798548522,
     "msg": "Deployment started",
-    "ref": "Started by upstream project \"GW Deploy DEV_PERF\" build number 25",
+    "ref": "Started by upstream project GW Deploy DEV_PERF build number 25",
     "type": "JOB_STARTED"
   },
   {

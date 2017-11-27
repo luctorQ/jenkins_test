@@ -377,7 +377,7 @@ pipeline {
 
 					def covered=params.findAll({key,value->
 						key.startsWith('INCLUDE_') && value
-					}).collect({it.key.substring("INCLUDE_".length)})
+					}).collect({it.key.substring("INCLUDE_".length())})
 					println('covered:'+covered)
 					
 					def bindings=[

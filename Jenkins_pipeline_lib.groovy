@@ -63,7 +63,7 @@ pipeline {
 					println "HISTORY_EVENTS CLASS:"+HISTORY_EVENTS.getClass()
 					
 					def bindings=[
-								TEST:'ok',
+								PARAMS:params,
 								APP_BUILD_DONE:HISTORY_EVENTS.findAll({it.type=='APP_BUILD_DONE'}).collect{it.ref}
 							]
 							

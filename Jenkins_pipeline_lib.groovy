@@ -48,7 +48,7 @@ pipeline {
 					 def str=mytemplate.eval('com/hastingsdirect/templates/emailtemplate.groovy')
 					 println 'after str:'+str	
 					 */				
-					def	HISTORY_EVENTS_JSON="""
+					def	HISTORY_EVENTS_JSON='''
 [
   {
     "date": 1511798042497,
@@ -99,7 +99,7 @@ pipeline {
   {
     "date": 1511798548522,
     "msg": "Deployment started",
-    "ref": "Started by upstream project GW Deploy DEV_PERF build number 25",
+    "ref": "Started by upstream project \"GW Deploy DEV_PERF\" build number 25",
     "type": "JOB_STARTED"
   },
   {
@@ -369,7 +369,7 @@ pipeline {
     "type": "ARTIFACTORY_UPLOAD"
   }
 ]
-"""
+'''
 					def HISTORY_EVENTS=PipelineUtils.fromJson(HISTORY_EVENTS_JSON,true)
 					println 'HISTORY_EVENTS:'+HISTORY_EVENTS
 					println "HISTORY_EVENTS CLASS:"+HISTORY_EVENTS.getClass()

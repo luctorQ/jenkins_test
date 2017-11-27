@@ -49,15 +49,328 @@ pipeline {
 					 println 'after str:'+str	
 					 */				
 					def	HISTORY_EVENTS_JSON="""
-[{
-		"date":1511369584479,"msg":"Build 621 of pc completed with result UNSTABLE","ref":{
-			"build":{
-				"appname":"pc","artifactoryurl":"","buildidentifier":"26294","buildresult":"UNSTABLE","created_at":1511349799117,"createdate":1511349799000,"deleted":false,"description":"","id":1870,"important":false,"jenkinsbuildnumber":621,"jenkinsbuildurl":"http://bx-cinappd03.network.uk.ad:8080/job/PC%20Build/621/","storedinartifactory":false,"svnpath":"Hastings/branches/CAD7/PolicyCenter/modules/configuration","svnrevisionnumber":26294,"trunk":false,"updated_at":1511349799117
-			},"junittests":{
-				"failCount":4,"failureDiffString":" / -10","skipCount":0,"testsUrl":"http://bx-cinappd03.network.uk.ad:8080/job/PC%20Build/621//testReport","totalCount":195
-			}
-		},"type":"APP_BUILD_DONE"
-	}]
+[
+  {
+    "date": 1511798042497,
+    "msg": "Continuous deployment started",
+    "ref": {
+      "CREDS_ID": "SVC_TST_Autodeploy",
+      "INCLUDE_ab": true,
+      "INCLUDE_bc": true,
+      "INCLUDE_cc": true,
+      "INCLUDE_pc": true,
+      "SVN_BRANCH": "https://bx-svnappd01.network.uk.ad/svn/Hastings/branches/PR1801"
+    },
+    "type": "PARAMS_PASSED"
+  },
+  {
+    "date": 1511798530369,
+    "msg": "Build 320 of bc completed with result SUCCESS",
+    "ref": {
+      "build": {
+        "appname": "bc",
+        "artifactoryurl": "",
+        "buildidentifier": "26548",
+        "buildresult": "SUCCESS",
+        "created_at": 1511798529017,
+        "createdate": 1511798529000,
+        "deleted": false,
+        "description": "",
+        "id": 1909,
+        "important": false,
+        "jenkinsbuildnumber": 320,
+        "jenkinsbuildurl": "http://bx-cinappd03.network.uk.ad:8080/job/BC%20Build/320/",
+        "storedinartifactory": false,
+        "svnpath": "Hastings/branches/PR1801/BillingCenter/modules/configuration",
+        "svnrevisionnumber": 26548,
+        "trunk": false,
+        "updated_at": 1511798529017
+      },
+      "junittests": {
+        "failCount": 0,
+        "failureDiffString": " / \u00b10",
+        "skipCount": 0,
+        "testsUrl": "http://bx-cinappd03.network.uk.ad:8080/job/BC%20Build/320//testReport",
+        "totalCount": 4
+      }
+    },
+    "type": "APP_BUILD_DONE"
+  },
+  {
+    "date": 1511798548522,
+    "msg": "Deployment started",
+    "ref": [
+      "Started by upstream project \"GW Deploy DEV_PERF\" build number 25"
+    ],
+    "type": "JOB_STARTED"
+  },
+  {
+    "date": 1511798548758,
+    "msg": "Checked current deployed apps [[id:127, appname:ab, jenkinsbuildnumber:83, jenkinsbuildurl:http://bx-cinappd03.network.uk.ad:8080/job/CM%20Build/83/, svnrevisionnumber:26399, artifactoryurl:GuideWire/com/hastingsdirect/ab/26399/ContactManager-dbcp.ear, buildidentifier:26399, createdate:2017-11-23 14:53:04.0, svnpath:Hastings/trunk/ContactManager/modules/configuration, trunk:true, storedinartifactory:true, created_at:2017-06-12 12:24:21.677, updated_at:2017-11-27 16:02:09.0, important:false, deleted:false, buildresult:SUCCESS, description:, integrationpropertiesurl:null, integrationpropertiesrevision:null, app_id:127, appserver_id:1, name:ab, category:SOR, sso:false, batch:true, environment_id:1, databasesetting_id:25, build_id:1883, ispingable:true, pinglastchecked:2017-11-27 16:02:09.0, switchedoff:false, statusreason:Site is up, edgedebuglevel:null, edgeconfiglocation:null, edgeloglocation:null, bridgeconfiglocation:null, iissitename:null, iissiteport:null, contextroot:ab, cluster_id:1056, integrationpropertiespath:D:/resources/integration, integrationpropertiestype:Test, hidefromdashboard:false, islnloglevels:null, drainable:false, rootdir:D:\\Software\\GuidewireApp\\installedApps\\GuidewireAppNode01Cell\\ab.ear\\ab.war], [id:128, appname:bc, jenkinsbuildnumber:317, jenkinsbuildurl:http://bx-cinappd03.network.uk.ad:8080/job/BC%20Build/317/, svnrevisionnumber:26440, artifactoryurl:GuideWire/com/hastingsdirect/bc/26440/BillingCenter-dbcp.ear, buildidentifier:26440, createdate:2017-11-24 12:56:40.0, svnpath:Hastings/branches/PR1801/BillingCenter/modules/configuration, trunk:false, storedinartifactory:true, created_at:2017-06-12 12:24:21.677, updated_at:2017-11-27 16:02:09.0, important:false, deleted:false, buildresult:SUCCESS, description:, integrationpropertiesurl:null, integrationpropertiesrevision:null, app_id:128, appserver_id:1, name:bc, category:SOR, sso:true, batch:true, environment_id:1, databasesetting_id:26, build_id:1893, ispingable:true, pinglastchecked:2017-11-27 16:02:09.0, switchedoff:false, statusreason:Site is up, edgedebuglevel:null, edgeconfiglocation:null, edgeloglocation:null, bridgeconfiglocation:null, iissitename:null, iissiteport:null, contextroot:bc, cluster_id:1057, integrationpropertiespath:D:/resources/integration, integrationpropertiestype:Test, hidefromdashboard:false, islnloglevels:null, drainable:false, rootdir:D:\\Software\\GuidewireApp\\installedApps\\GuidewireAppNode01Cell\\bc.ear\\bc.war], [id:129, appname:cc, jenkinsbuildnumber:265, jenkinsbuildurl:http://bx-cinappd03.network.uk.ad:8080/job/CC%20Build/265/, svnrevisionnumber:26544, artifactoryurl:GuideWire/com/hastingsdirect/cc/26544/ClaimCenter-dbcp.ear, buildidentifier:26544, createdate:2017-11-27 15:17:03.0, svnpath:Hastings/branches/PR1801/ClaimCenter/modules/configuration, trunk:false, storedinartifactory:true, created_at:2017-06-12 12:24:21.677, updated_at:2017-11-27 16:02:09.0, important:false, deleted:false, buildresult:SUCCESS, description:, integrationpropertiesurl:null, integrationpropertiesrevision:null, app_id:129, appserver_id:1, name:cc, category:SOR, sso:true, batch:true, environment_id:1, databasesetting_id:27, build_id:1907, ispingable:true, pinglastchecked:2017-11-27 16:02:09.0, switchedoff:false, statusreason:Site is up, edgedebuglevel:null, edgeconfiglocation:null, edgeloglocation:null, bridgeconfiglocation:null, iissitename:null, iissiteport:null, contextroot:cc, cluster_id:1058, integrationpropertiespath:D:/resources/integration, integrationpropertiestype:Test, hidefromdashboard:false, islnloglevels:null, drainable:false, rootdir:D:\\Software\\GuidewireApp\\installedApps\\GuidewireAppNode01Cell\\cc.ear\\cc.war], [id:130, appname:pc, jenkinsbuildnumber:639, jenkinsbuildurl:http://bx-cinappd03.network.uk.ad:8080/job/PC%20Build/639/, svnrevisionnumber:26542, artifactoryurl:GuideWire/com/hastingsdirect/pc/26542/PolicyCenter-dbcp.ear, buildidentifier:26542, createdate:2017-11-27 15:18:12.0, svnpath:Hastings/branches/PR1801/PolicyCenter/modules/configuration, trunk:false, storedinartifactory:true, created_at:2017-06-12 12:24:21.677, updated_at:2017-11-27 16:02:09.0, important:false, deleted:false, buildresult:SUCCESS, description:, integrationpropertiesurl:null, integrationpropertiesrevision:null, app_id:130, appserver_id:1, name:pc, category:SOR, sso:true, batch:true, environment_id:1, databasesetting_id:65, build_id:1908, ispingable:true, pinglastchecked:2017-11-27 16:02:09.0, switchedoff:false, statusreason:Site is up, edgedebuglevel:null, edgeconfiglocation:null, edgeloglocation:null, bridgeconfiglocation:null, iissitename:null, iissiteport:null, contextroot:pc, cluster_id:1059, integrationpropertiespath:D:/resources/integration, integrationpropertiestype:Test, hidefromdashboard:false, islnloglevels:null, drainable:false, rootdir:D:\\Software\\GuidewireApp\\installedApps\\GuidewireAppNode01Cell\\pc.ear\\pc.war], [id:166, appname:ec, jenkinsbuildnumber:240, jenkinsbuildurl:http://BX-CINAPPD03.network.uk.ad:8080/job/EC%20Build/240/, svnrevisionnumber:25718, artifactoryurl:EdgeConnect/com/hastingsdirect/ec/20171106_1156_1.240.25718/Portal.ear, buildidentifier:20171106_1156_1.240.25718, createdate:2017-11-06 11:57:16.0, svnpath:Hastings/branches/CAD7/DigitalPortal, trunk:false, storedinartifactory:true, created_at:2017-06-12 12:24:21.7, updated_at:2017-11-27 16:02:09.0, important:false, deleted:false, buildresult:UNDEFINED, description:, integrationpropertiesurl:null, integrationpropertiesrevision:null, app_id:166, appserver_id:124, name:ec, category:Digital, sso:null, batch:null, environment_id:1, databasesetting_id:null, build_id:1697, ispingable:true, pinglastchecked:2017-11-27 16:02:09.0, switchedoff:false, statusreason:Site is up, edgedebuglevel:Level 4 (All Information), edgeconfiglocation:C:/resources/RM1/edge-config.properties, edgeloglocation:C:/tmp/eclogs/RM1, bridgeconfiglocation:null, iissitename:null, iissiteport:null, contextroot:Portal, cluster_id:1060, integrationpropertiespath:, integrationpropertiestype:, hidefromdashboard:false, islnloglevels:null, drainable:false, rootdir:C:\\Software\\EdgeApp\\installedApps\\EdgeAppNode01Cell\\Portal.ear\\Portal.war]]",
+    "ref": [
+      {
+        "app_id": 127,
+        "appname": "ab",
+        "appserver_id": 1,
+        "artifactoryurl": "GuideWire/com/hastingsdirect/ab/26399/ContactManager-dbcp.ear",
+        "batch": true,
+        "build_id": 1883,
+        "buildidentifier": "26399",
+        "buildresult": "SUCCESS",
+        "category": "SOR",
+        "cluster_id": 1056,
+        "contextroot": "ab",
+        "created_at": 1497266661677,
+        "createdate": 1511448784000,
+        "databasesetting_id": 25,
+        "deleted": false,
+        "description": "",
+        "drainable": false,
+        "environment_id": 1,
+        "hidefromdashboard": false,
+        "id": 127,
+        "important": false,
+        "integrationpropertiespath": "D:/resources/integration",
+        "integrationpropertiestype": "Test",
+        "ispingable": true,
+        "jenkinsbuildnumber": 83,
+        "jenkinsbuildurl": "http://bx-cinappd03.network.uk.ad:8080/job/CM%20Build/83/",
+        "name": "ab",
+        "pinglastchecked": 1511798529000,
+        "rootdir": "D:\\Software\\GuidewireApp\\installedApps\\GuidewireAppNode01Cell\\ab.ear\\ab.war",
+        "sso": false,
+        "statusreason": "Site is up",
+        "storedinartifactory": true,
+        "svnpath": "Hastings/trunk/ContactManager/modules/configuration",
+        "svnrevisionnumber": 26399,
+        "switchedoff": false,
+        "trunk": true,
+        "updated_at": 1511798529000
+      },
+      {
+        "app_id": 128,
+        "appname": "bc",
+        "appserver_id": 1,
+        "artifactoryurl": "GuideWire/com/hastingsdirect/bc/26440/BillingCenter-dbcp.ear",
+        "batch": true,
+        "build_id": 1893,
+        "buildidentifier": "26440",
+        "buildresult": "SUCCESS",
+        "category": "SOR",
+        "cluster_id": 1057,
+        "contextroot": "bc",
+        "created_at": 1497266661677,
+        "createdate": 1511528200000,
+        "databasesetting_id": 26,
+        "deleted": false,
+        "description": "",
+        "drainable": false,
+        "environment_id": 1,
+        "hidefromdashboard": false,
+        "id": 128,
+        "important": false,
+        "integrationpropertiespath": "D:/resources/integration",
+        "integrationpropertiestype": "Test",
+        "ispingable": true,
+        "jenkinsbuildnumber": 317,
+        "jenkinsbuildurl": "http://bx-cinappd03.network.uk.ad:8080/job/BC%20Build/317/",
+        "name": "bc",
+        "pinglastchecked": 1511798529000,
+        "rootdir": "D:\\Software\\GuidewireApp\\installedApps\\GuidewireAppNode01Cell\\bc.ear\\bc.war",
+        "sso": true,
+        "statusreason": "Site is up",
+        "storedinartifactory": true,
+        "svnpath": "Hastings/branches/PR1801/BillingCenter/modules/configuration",
+        "svnrevisionnumber": 26440,
+        "switchedoff": false,
+        "trunk": false,
+        "updated_at": 1511798529000
+      },
+      {
+        "app_id": 129,
+        "appname": "cc",
+        "appserver_id": 1,
+        "artifactoryurl": "GuideWire/com/hastingsdirect/cc/26544/ClaimCenter-dbcp.ear",
+        "batch": true,
+        "build_id": 1907,
+        "buildidentifier": "26544",
+        "buildresult": "SUCCESS",
+        "category": "SOR",
+        "cluster_id": 1058,
+        "contextroot": "cc",
+        "created_at": 1497266661677,
+        "createdate": 1511795823000,
+        "databasesetting_id": 27,
+        "deleted": false,
+        "description": "",
+        "drainable": false,
+        "environment_id": 1,
+        "hidefromdashboard": false,
+        "id": 129,
+        "important": false,
+        "integrationpropertiespath": "D:/resources/integration",
+        "integrationpropertiestype": "Test",
+        "ispingable": true,
+        "jenkinsbuildnumber": 265,
+        "jenkinsbuildurl": "http://bx-cinappd03.network.uk.ad:8080/job/CC%20Build/265/",
+        "name": "cc",
+        "pinglastchecked": 1511798529000,
+        "rootdir": "D:\\Software\\GuidewireApp\\installedApps\\GuidewireAppNode01Cell\\cc.ear\\cc.war",
+        "sso": true,
+        "statusreason": "Site is up",
+        "storedinartifactory": true,
+        "svnpath": "Hastings/branches/PR1801/ClaimCenter/modules/configuration",
+        "svnrevisionnumber": 26544,
+        "switchedoff": false,
+        "trunk": false,
+        "updated_at": 1511798529000
+      },
+      {
+        "app_id": 130,
+        "appname": "pc",
+        "appserver_id": 1,
+        "artifactoryurl": "GuideWire/com/hastingsdirect/pc/26542/PolicyCenter-dbcp.ear",
+        "batch": true,
+        "build_id": 1908,
+        "buildidentifier": "26542",
+        "buildresult": "SUCCESS",
+        "category": "SOR",
+        "cluster_id": 1059,
+        "contextroot": "pc",
+        "created_at": 1497266661677,
+        "createdate": 1511795892000,
+        "databasesetting_id": 65,
+        "deleted": false,
+        "description": "",
+        "drainable": false,
+        "environment_id": 1,
+        "hidefromdashboard": false,
+        "id": 130,
+        "important": false,
+        "integrationpropertiespath": "D:/resources/integration",
+        "integrationpropertiestype": "Test",
+        "ispingable": true,
+        "jenkinsbuildnumber": 639,
+        "jenkinsbuildurl": "http://bx-cinappd03.network.uk.ad:8080/job/PC%20Build/639/",
+        "name": "pc",
+        "pinglastchecked": 1511798529000,
+        "rootdir": "D:\\Software\\GuidewireApp\\installedApps\\GuidewireAppNode01Cell\\pc.ear\\pc.war",
+        "sso": true,
+        "statusreason": "Site is up",
+        "storedinartifactory": true,
+        "svnpath": "Hastings/branches/PR1801/PolicyCenter/modules/configuration",
+        "svnrevisionnumber": 26542,
+        "switchedoff": false,
+        "trunk": false,
+        "updated_at": 1511798529000
+      },
+      {
+        "app_id": 166,
+        "appname": "ec",
+        "appserver_id": 124,
+        "artifactoryurl": "EdgeConnect/com/hastingsdirect/ec/20171106_1156_1.240.25718/Portal.ear",
+        "build_id": 1697,
+        "buildidentifier": "20171106_1156_1.240.25718",
+        "buildresult": "UNDEFINED",
+        "category": "Digital",
+        "cluster_id": 1060,
+        "contextroot": "Portal",
+        "created_at": 1497266661700,
+        "createdate": 1509969436000,
+        "deleted": false,
+        "description": "",
+        "drainable": false,
+        "edgeconfiglocation": "C:/resources/RM1/edge-config.properties",
+        "edgedebuglevel": "Level 4 (All Information)",
+        "edgeloglocation": "C:/tmp/eclogs/RM1",
+        "environment_id": 1,
+        "hidefromdashboard": false,
+        "id": 166,
+        "important": false,
+        "integrationpropertiespath": "",
+        "integrationpropertiestype": "",
+        "ispingable": true,
+        "jenkinsbuildnumber": 240,
+        "jenkinsbuildurl": "http://BX-CINAPPD03.network.uk.ad:8080/job/EC%20Build/240/",
+        "name": "ec",
+        "pinglastchecked": 1511798529000,
+        "rootdir": "C:\\Software\\EdgeApp\\installedApps\\EdgeAppNode01Cell\\Portal.ear\\Portal.war",
+        "statusreason": "Site is up",
+        "storedinartifactory": true,
+        "svnpath": "Hastings/branches/CAD7/DigitalPortal",
+        "svnrevisionnumber": 25718,
+        "switchedoff": false,
+        "trunk": false,
+        "updated_at": 1511798529000
+      }
+    ],
+    "type": "CURRENTLY_DEPLOYED"
+  },
+  {
+    "date": 1511798624835,
+    "msg": "Restarted server BX2-RM-GW01:GuidewireApp",
+    "type": "GENERAL"
+  },
+  {
+    "date": 1511798890567,
+    "msg": "Deployed app bc on server BX2-RM-GW01:GuidewireApp",
+    "ref": {
+      "appname": "bc",
+      "artifactoryurl": "",
+      "buildidentifier": "26548",
+      "buildresult": "SUCCESS",
+      "created_at": 1511798529017,
+      "createdate": 1511798529000,
+      "deleted": false,
+      "description": "",
+      "id": 1909,
+      "important": false,
+      "jenkinsbuildnumber": 320,
+      "jenkinsbuildurl": "http://bx-cinappd03.network.uk.ad:8080/job/BC%20Build/320/",
+      "storedinartifactory": false,
+      "svnpath": "Hastings/branches/PR1801/BillingCenter/modules/configuration",
+      "svnrevisionnumber": 26548,
+      "trunk": false,
+      "updated_at": 1511798529017
+    },
+    "type": "DEPLOYED_APP"
+  },
+  {
+    "date": 1511799049622,
+    "msg": "Application bc started on server BX2-RM-GW01:GuidewireApp",
+    "type": "APP_STARTED"
+  },
+  {
+    "date": 1511799409448,
+    "msg": "Application pc started on server BX2-RM-GW01:GuidewireApp",
+    "type": "APP_STARTED"
+  },
+  {
+    "date": 1511799603301,
+    "msg": "Application cc started on server BX2-RM-GW01:GuidewireApp",
+    "type": "APP_STARTED"
+  },
+  {
+    "date": 1511799735689,
+    "msg": "Application ab started on server BX2-RM-GW01:GuidewireApp",
+    "type": "APP_STARTED"
+  },
+  {
+    "date": 1511799736171,
+    "msg": "end of pipeline",
+    "type": "GENERAL"
+  },
+  {
+    "date": 1511799747292,
+    "msg": "Uploaded to artifactory application bc to url http://bx-cinappd02.network.uk.ad:8081/artifactory/GuideWire/com/hastingsdirect/bc/26548/BillingCenter-dbcp.ear",
+    "ref": {
+      "artifactName": "BillingCenter-dbcp.ear",
+      "publishUrl": "http://bx-cinappd02.network.uk.ad:8081/artifactory/GuideWire/com/hastingsdirect/bc/26548/BillingCenter-dbcp.ear",
+      "status": "UPLOAD_OK"
+    },
+    "type": "ARTIFACTORY_UPLOAD"
+  }
+]
 """
 					def HISTORY_EVENTS=PipelineUtils.fromJson(HISTORY_EVENTS_JSON,true)
 					println 'HISTORY_EVENTS:'+HISTORY_EVENTS

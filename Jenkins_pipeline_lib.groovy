@@ -4,6 +4,7 @@ import com.hastingsdirect.sql.*
 import com.hastingsdirect.vo.*
 import com.hastingsdirect.ep.*
 import com.hastingsdirect.templates.Template
+import com.hastingsdirect.pipeline.PipelineUtils
 
 events.add('run this pipeline')
 

@@ -23,7 +23,7 @@ println 'thia:'+this
 properties([
 	parameters([
 		string(name: 'BRANCH'),
-		boolean(name:'INCLUDE_pc'),
+		booleanParam(name:'INCLUDE_pc'),
 		string(name: 'BRANCH_1', defaultValue: 'master'),
 		//						extendedChoiceParam(name:'JSON_PARAM',groovyScript:groovyscript,description:'Descr'),
 		extendedChoiceParam(new EPPromotedBuilds("TEST_PARAM",'Promoted builds')),

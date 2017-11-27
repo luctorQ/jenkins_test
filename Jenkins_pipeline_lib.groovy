@@ -61,14 +61,23 @@ pipeline {
 					def HISTORY_EVENTS=ExtendedProperty.fromJson(HISTORY_EVENTS_JSON)
 					println 'HISTORY_EVENTS:'+HISTORY_EVENTS
 					println "HISTORY_EVENTS CLASS:"+HISTORY_EVENTS.getClass()
-					
+
 					def bindings=[
-								PARAMS:params,
-								APP_BUILD_DONE:HISTORY_EVENTS.findAll({it.type=='APP_BUILD_DONE'}).collect{it.ref}
-							]
-							
+						PARAMS:params,
+						JOB:[
+							currentResult:currentBuild.currentResult,
+							number:currentBuild.number,
+							absoluteUrl:currentBuild.absoluteUrl
+						],
+						APP_BUILD_DONE:HISTORY_EVENTS.findAll({it.type=='APP_BUILD_DONE'}).collect{it.ref},
+						DEPLOYED_APP:HISTORY_EVENTS.findAll({it.type=='DEPLOYED_APP'}).collect{it.ref},
+						CURRENTLY_DEPLOYED:HISTORY_EVENTS.findAll({it.type=='CURRENTLY_DEPLOYED'}).collect{it.ref},
+						SMOKE_TESTED:HISTORY_EVENTS.findAll({it.type=='SMOKE_TESTED'}).collect{it.ref},
+						ARTIFACTORY_UPLOAD:HISTORY_EVENTS.findAll({it.type=='ARTIFACTORY_UPLOAD'}).collect{it.ref},
+					]
+
 					println 'bindings:'+bindings
-							
+
 					eventsStore('abc')
 					sendEmail(
 							template:'templates/email-build-deploy-summary.groovy',

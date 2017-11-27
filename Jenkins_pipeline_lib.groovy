@@ -377,7 +377,7 @@ pipeline {
  
 					def covered=[]
 					def notcovered=[]
-					def covered=params.findAll({key,value->
+					params.findAll({key,value->
 						key.startsWith('INCLUDE_')
 					}).each({key,value->
 						def appname=key.substring("INCLUDE_".length())

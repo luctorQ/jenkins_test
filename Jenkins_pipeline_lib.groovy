@@ -374,6 +374,11 @@ pipeline {
 					println 'HISTORY_EVENTS:'+HISTORY_EVENTS
 					println "HISTORY_EVENTS CLASS:"+HISTORY_EVENTS.getClass()
 
+					def covered=params.findAll({key,value->
+						key.startsWith('INCLUDE_') && value
+					}).collect({it.key})
+					println('covered:'+covered)
+					
 					def bindings=[
 						PARAMS:params,
 						JOB:[

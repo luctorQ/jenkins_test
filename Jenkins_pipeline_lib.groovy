@@ -374,14 +374,25 @@ pipeline {
 					def HISTORY_EVENTS=PipelineUtils.fromJson(HISTORY_EVENTS_JSON,true)
 					println 'HISTORY_EVENTS:'+HISTORY_EVENTS
 					println "HISTORY_EVENTS CLASS:"+HISTORY_EVENTS.getClass()
-
+ 
+					def covered=[]
+					def notcovered=[]
 					def covered=params.findAll({key,value->
-						key.startsWith('INCLUDE_') && value
-					}).collect({it.key.substring("INCLUDE_".length())})
+						key.startsWith('INCLUDE_')
+					}).each({key,value->
+						def appname=key.substring("INCLUDE_".length())
+						if(value) {
+							covered<<appname
+						}else {
+							notcovered<<appname
+						}
+					})					
 					println('covered:'+covered)
 					
 					def bindings=[
 						PARAMS:params,
+						COVERED_APPS:covered,
+						NOT_COVERED_APPS:notcovered,
 						JOB:[
 							currentResult:currentBuild.currentResult,
 							number:currentBuild.number,

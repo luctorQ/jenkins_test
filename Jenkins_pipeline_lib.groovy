@@ -370,7 +370,6 @@ pipeline {
 '''
 //					def HISTORY_EVENTS=PipelineUtils.fromJson(HISTORY_EVENTS_JSON,true)
 //					println 'HISTORY_EVENTS:'+HISTORY_EVENTS
-					println "HISTORY_EVENTS CLASS:"+HISTORY_EVENTS.getClass()
 					def HISTORY_EVENTS2=readJSON(text:HISTORY_EVENTS_JSON)
 					println 'HISTORY_EVENTS2:'+HISTORY_EVENTS2
 					

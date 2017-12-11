@@ -376,7 +376,7 @@ pipeline {
 					eventsStore(HISTORY_EVENTS2)
 
 					
-					def aa=''+HISTORY_EVENTS2
+					def aa=HISTORY_EVENTS2.toString()
 					println 'aa class:'+aa.getClass()
 					println 'aa:'+aa
 

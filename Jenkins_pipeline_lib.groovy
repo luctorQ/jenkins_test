@@ -390,6 +390,7 @@ pipeline {
 						PARAMS:[
 							SVN_BRANCH:params.BRANCH
 						],
+						JOB:[:],
 						HISTORY_EVENTS:HISTORY_EVENTS
 					]
 					)

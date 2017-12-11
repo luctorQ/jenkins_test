@@ -375,7 +375,8 @@ pipeline {
 					println 'HISTORY_EVENTS:'+HISTORY_EVENTS
 					println "HISTORY_EVENTS CLASS:"+HISTORY_EVENTS.getClass()
 					def HISTORY_EVENTS2=fromJson(HISTORY_EVENTS_JSON)
- 
+					println 'HISTORY_EVENTS2:'+HISTORY_EVENTS2
+					
 					def covered=[]
 					def notcovered=[]
 					params.findAll({key,value->

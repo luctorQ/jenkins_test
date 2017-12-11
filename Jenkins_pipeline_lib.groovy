@@ -387,7 +387,9 @@ pipeline {
 					sendEmail(template:'templates/email-build-deploy-summary.groovy',
 					recipients:'pluszynski@bleak.pl',
 					bindings:[
-						SVN_BRANCH:params.BRANCH,
+						PARAMS:[
+							SVN_BRANCH:params.BRANCH
+						],
 						HISTORY_EVENTS:HISTORY_EVENTS
 					]
 					)

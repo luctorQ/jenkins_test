@@ -371,79 +371,15 @@ pipeline {
   }
 ]
 '''
-					def HISTORY_EVENTS=PipelineUtils.fromJson(HISTORY_EVENTS_JSON,true)
-					println 'HISTORY_EVENTS:'+HISTORY_EVENTS
+//					def HISTORY_EVENTS=PipelineUtils.fromJson(HISTORY_EVENTS_JSON,true)
+//					println 'HISTORY_EVENTS:'+HISTORY_EVENTS
 					println "HISTORY_EVENTS CLASS:"+HISTORY_EVENTS.getClass()
 					def HISTORY_EVENTS2=readJSON(text:HISTORY_EVENTS_JSON)
 					println 'HISTORY_EVENTS2:'+HISTORY_EVENTS2
 					
-					def covered=[]
-					def notcovered=[]
-					params.findAll({key,value->
-						key.startsWith('INCLUDE_')
-					}).each({key,value->
-						def appname=key.substring("INCLUDE_".length())
-						if(value) {
-							covered<<appname
-						}else {
-							notcovered<<appname
-						}
-					})					
-					println('covered:'+covered)
+					eventsStore(HISTORY_EVENTS2)
 					
-					def bindings=[
-						PARAMS:params,
-						COVERED_APPS:covered,
-						NOT_COVERED_APPS:notcovered,
-						JOB:[
-							currentResult:currentBuild.currentResult,
-							number:currentBuild.number,
-							absoluteUrl:currentBuild.absoluteUrl
-						],
-						APP_BUILD_DONE:HISTORY_EVENTS.findAll({it.type=='APP_BUILD_DONE'}).collect{it.ref},
-						DEPLOYED_APP:HISTORY_EVENTS.findAll({it.type=='DEPLOYED_APP'}).collect{it.ref},
-						CURRENTLY_DEPLOYED:HISTORY_EVENTS.findAll({it.type=='CURRENTLY_DEPLOYED'}).collect{it.ref},
-						SMOKE_TESTED:HISTORY_EVENTS.findAll({it.type=='SMOKE_TESTED'}).collect{it.ref},
-						ARTIFACTORY_UPLOAD:HISTORY_EVENTS.findAll({it.type=='ARTIFACTORY_UPLOAD'}).collect{it.ref},
-					]
-
-					println 'bindings:'+bindings
-
-					eventsStore('abc')
-					sendEmail(
-							template:'templates/email-build-deploy-summary.groovy',
-							subject:'Build Test email 2',
-							recipients: 'pluszynski@bleak.pl,pawelluszynski@hastingsdirect.onmicrosoft.com',
-							attachments:'tmp_out/report*.zip',
-							bindings:bindings
-							)
-
-
-					/*					def bb=build job: 'pipeline_test_libs2', propagate: true, wait: true,
-					 parameters: [
-					 string(name: 'BRANCH', value: 'blavalue')
-					 ]
-					 println 'build result:'+bb
-					 println 'build class:'+bb.getClass()
-					 println 'ext build result:'+bb
-					 def restored=eventsRestore(bb)
-					 println('restored:'+restored)
-					 def j1EnvVariables = bb.buildVariables;
-					 println 'ext env vairalbles:'+j1EnvVariables
-					 def extHistory=j1EnvVariables.EVENTS_HISTORY
-					 println 'history of ext build:'+extHistory
-					 println 'history of ext build [0]:'+extHistory[0]
-					 println 'type fo extHistory:'+extHistory.getClass()
-					 eventsStore(events.list)
-					 eventsStore(restored)
-					 */
-
-					/*					def rawBuild=bb.rawBuild
-					 println 'raw build env:'+rawBuild.getEnvironment()
-					 */					
-					/*def binding=rawBuild.getBinding()
-					 println 'binding event:'+binding.events.list
-					 */
+					
 				}
 			}
 		}

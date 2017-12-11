@@ -368,28 +368,29 @@ pipeline {
   }
 ]
 '''
-//					def HISTORY_EVENTS=PipelineUtils.fromJson(HISTORY_EVENTS_JSON,true)
-//					println 'HISTORY_EVENTS:'+HISTORY_EVENTS
+					//					def HISTORY_EVENTS=PipelineUtils.fromJson(HISTORY_EVENTS_JSON,true)
+					//					println 'HISTORY_EVENTS:'+HISTORY_EVENTS
 					def HISTORY_EVENTS2=readJSON(text:HISTORY_EVENTS_JSON)
 					println 'HISTORY_EVENTS2:'+HISTORY_EVENTS2
-					
+
 					eventsStore(HISTORY_EVENTS2)
-					
-					
+
+
 				}
 			}
 		}
 		stage('Show quote') {
 			steps {
-				echo 'HIST:'+eventsRestore()
-				def HISTORY_EVENTS=eventsRestore()
-				sendEmail(template:'templates/email-build-deploy-summary.groovy',
+				script{
+					echo 'HIST:'+eventsRestore()
+					def HISTORY_EVENTS=eventsRestore()
+					sendEmail(template:'templates/email-build-deploy-summary.groovy',
 					recipients:'pluszynski@bleak.pl',
 					bindings:[
 						HISTORY_EVENTS:HISTORY_EVENTS
-						]
+					]
 					)
-
+				}
 			}
 		}
 	}

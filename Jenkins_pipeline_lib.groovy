@@ -371,7 +371,9 @@ pipeline {
 					//					def HISTORY_EVENTS=PipelineUtils.fromJson(HISTORY_EVENTS_JSON,true)
 					//					println 'HISTORY_EVENTS:'+HISTORY_EVENTS
 					def HISTORY_EVENTS2=readJSON(text:HISTORY_EVENTS_JSON)
+					println "HISTORY class:"+HISTORY_EVENTS2.getClass()
 					println 'HISTORY_EVENTS2:'+HISTORY_EVENTS2
+					
 
 					eventsStore(HISTORY_EVENTS2)
 

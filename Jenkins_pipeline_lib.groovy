@@ -382,6 +382,13 @@ pipeline {
 		stage('Show quote') {
 			steps {
 				echo 'HIST:'+eventsRestore()
+				def HISTORY_EVENTS=eventsRestore()
+				sendEmail(template:'templates/email-build-deploy-summary.groovy'
+					recipients:'pluszynski@bleak.pl',
+					bindings:[
+						HISTORY_EVENTS:HISTORY_EVENTS
+						]
+					)
 
 			}
 		}

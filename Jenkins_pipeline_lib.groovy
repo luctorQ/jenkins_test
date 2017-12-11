@@ -6,8 +6,6 @@ import com.hastingsdirect.ep.*
 import com.hastingsdirect.templates.Template
 import com.hastingsdirect.pipeline.PipelineUtils
 
-events.add('run this pipeline')
-
 println 'env:'+env
 println 'env.WORKSPACE:'+env.WORKSPACE
 
